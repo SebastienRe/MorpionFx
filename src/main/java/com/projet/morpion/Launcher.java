@@ -1,6 +1,6 @@
 package com.projet.morpion;
 
-import com.projet.morpion.controller.ScreenController;
+import com.projet.morpion.utilities.SceneManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,10 +14,8 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        SceneManager.getInstance().changeScene("menu.fxml");
         stage.setTitle("JavaFX-Morpion");
-        stage.setScene(scene);
         stage.show();
     }
 
