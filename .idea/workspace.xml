@@ -5,49 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="apprentissage IA">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/dataset/Index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/dataset/Tic_tac_initial_results.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/dataset/sso" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/dataset/tic-tac-toe.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/dataset/tic-tac-toe.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ManVsCpu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ManVsMan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/TicTacToe/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/TicTacToe/cross.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/TicTacToe/winCircle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/TicTacToe/winCross.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train/config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train/mapData.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train/mlp_1000.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train/mlp_200.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train/train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train_dev_test/dev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train_dev_test/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/train_dev_test/train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/config/ConfigFileLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/coup/Coup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/layer/Layer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/layer/MultiLayerPerceptron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/transfert/SigmoidalTransferFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/transfert/TanHyperbolicTransferFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/ai/transfert/TransferFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/morpionfx/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/morpionfx/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/morpionfx/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,8 +71,16 @@
       <option name="presentableId" value="Default" />
       <updated>1678344648352</updated>
       <workItem from="1678344649499" duration="3334000" />
-      <workItem from="1678348401228" duration="639000" />
+      <workItem from="1678348401228" duration="1129000" />
     </task>
+    <task id="LOCAL-00001" summary="apprentissage IA">
+      <created>1678349067673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678349067673</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
