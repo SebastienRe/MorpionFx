@@ -8,7 +8,6 @@ import com.projet.morpion.ai.transfert.SigmoidalTransferFunction;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 
@@ -16,9 +15,7 @@ import java.util.HashMap;
 
 import static com.projet.morpion.ai.Test.*;
 
-public class HelloController {
-    @FXML
-    private Button start;
+public class TrainerController {
 
     @FXML
     private TextField field;
@@ -80,6 +77,10 @@ public class HelloController {
                     updateMessage("Learning completed!");
                     updateProgress(100, 100);
 
+                    // save to model
+                String  nameModel = "model_"+ config.numberOfhiddenLayers + config.hiddenLayerSize
+                        + config.learningRate + ".srl";
+                net.save("./resources/models/" + nameModel);
                 return null;
             }
         };
@@ -89,6 +90,11 @@ public class HelloController {
         progress.progressProperty().bind(task.progressProperty());
         Thread thread = new Thread(task);
         thread.start();
+
+
+
+
+
 
     }
 
