@@ -24,4 +24,9 @@ public class MenuController {
     protected void modelButtonPressed() {
         SceneManager.getInstance().changeScene("models.fxml");
     }
+    @FXML
+    protected void onClickTrain()
+    {
+        SceneManager.getInstance().changeScene("train.fxml");
+    }
 }

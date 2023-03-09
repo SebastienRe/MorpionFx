@@ -5,6 +5,7 @@ import com.projet.morpion.ai.config.ConfigFileLoader;
 import com.projet.morpion.ai.coup.Coup;
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.ai.transfert.SigmoidalTransferFunction;
+import com.projet.morpion.utilities.SceneManager;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -78,7 +79,8 @@ public class TrainerController {
                     updateProgress(100, 100);
 
                     // save to model
-                String  nameModel = "model_"+ config.numberOfhiddenLayers + config.hiddenLayerSize
+                String  nameModel = "model_"+ config.numberOfhiddenLayers
+                        +"_"+ config.hiddenLayerSize + "_"
                         + config.learningRate + ".srl";
                 net.save("./resources/models/" + nameModel);
                 return null;
@@ -90,10 +92,7 @@ public class TrainerController {
         progress.progressProperty().bind(task.progressProperty());
         Thread thread = new Thread(task);
         thread.start();
-
-
-
-
+        
 
 
     }
