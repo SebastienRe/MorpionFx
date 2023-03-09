@@ -1,8 +1,10 @@
-module com.example.morpionfx {
+module com.projet.morpion {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.morpionfx to javafx.fxml;
-    exports com.example.morpionfx;
+    opens com.projet.morpion to javafx.fxml;
+    exports com.projet.morpion;
+    exports com.projet.morpion.controller;
+    opens com.projet.morpion.controller to javafx.fxml;
 }
