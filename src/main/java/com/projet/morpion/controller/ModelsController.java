@@ -44,4 +44,9 @@ public class ModelsController {
         }
         SceneManager.getInstance().changeScene("menu.fxml");
     }
+
+    @FXML
+    protected void retourMenu() {
+        SceneManager.getInstance().changeScene("menu.fxml");
+    }
 }
