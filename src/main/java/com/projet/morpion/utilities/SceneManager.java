@@ -8,10 +8,8 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class SceneManager {
-    private HashMap<String, Scene> scenes;
     private static SceneManager instance = null;
     private SceneManager() {
-        scenes = new HashMap<>();
     }
 
     public static SceneManager getInstance() {
@@ -23,12 +21,9 @@ public class SceneManager {
 
     public void changeScene(String sceneName) {
         try {
-            if (!scenes.containsKey(sceneName)) {
-                FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(sceneName));
-                Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-                scenes.put(sceneName, scene);
-            }
-            Launcher.getMainStage().setScene(scenes.get(sceneName));
+            FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(sceneName));
+            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            Launcher.getMainStage().setScene(scene);
         }
         catch (IOException e) {
             e.printStackTrace();
