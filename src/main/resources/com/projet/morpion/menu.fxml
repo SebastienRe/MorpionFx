@@ -12,13 +12,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="IA">
             <items>
-<<<<<<< HEAD
               <MenuItem mnemonicParsing="false" onAction="#onClickSettings" text="Settings" />
-                  <MenuItem mnemonicParsing="false" text="Model" />
-=======
-              <MenuItem mnemonicParsing="false" text="Settings" />
                   <MenuItem mnemonicParsing="false" onAction="#modelButtonPressed" text="Model" />
->>>>>>> seb
             </items>
           </Menu>
         </menus>
