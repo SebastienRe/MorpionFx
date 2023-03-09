@@ -6,9 +6,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class MenuController {
     @FXML
-    protected void learn() {
-        SceneManager.getInstance().changeScene("train.fxml");
+    protected void onClickSettings() throws IOException {
+
+
+        SceneManager.getInstance().changeScene("settings.fxml");
     }
 }
