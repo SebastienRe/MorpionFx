@@ -95,4 +95,9 @@ public void initialize() throws IOException {
       }
 
     }
+    @FXML
+    protected void retourMenu()
+    {
+        SceneManager.getInstance().changeScene("menu.fxml");
+    }
 }

@@ -92,9 +92,10 @@ public class TrainerController {
         progress.progressProperty().bind(task.progressProperty());
         Thread thread = new Thread(task);
         thread.start();
-        
-
-
     }
-
+    @FXML
+    protected void retourMenu()
+    {
+        SceneManager.getInstance().changeScene("menu.fxml");
+    }
 }

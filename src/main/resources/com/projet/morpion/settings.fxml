@@ -43,6 +43,7 @@
             <Label layoutX="93.0" layoutY="14.0" text="L" />
             <Label layoutX="154.0" layoutY="14.0" text="LR" />
             <Label layoutX="213.0" layoutY="14.0" text="H" />
+            <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" onAction="#retourMenu" text="&lt;" />
          </children>
       </AnchorPane>
    </children>
