@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 
 public class PlayController {
 
+    private ImageView img1, img2, img3;
     @FXML
     private GridPane matriceDuJeu;
     private boolean isJoeurOne = true;
@@ -55,6 +56,18 @@ public class PlayController {
                 for (Node node : matriceDuJeu.getChildren()) {
                     ((Button) node).setDisable(true);
                 }
+                int [] positionGagnante = morpion.getPositionWinner();
+
+                createImg();
+                Button btn1 = (Button) matriceDuJeu.getChildren().get(positionGagnante[0]);
+                btn1.setGraphic(img1);
+
+                Button btn2 = (Button) matriceDuJeu.getChildren().get(positionGagnante[1]);
+                btn2.setGraphic(img2);
+
+                Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
+                btn3.setGraphic(img3);
+
             }
         }
         if(morpion.isEndGame())
@@ -71,6 +84,33 @@ public class PlayController {
         }
 
 
+    }
+    private void createImg()
+    {
+        int result = morpion.getIdWinner();
+        if(result == -1)
+        {
+            img1 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img1.setFitWidth(30);
+            img1.setFitHeight(30);
+            img2 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img2.setFitWidth(30);
+            img2.setFitHeight(30);
+            img3 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img3.setFitWidth(30);
+            img3.setFitHeight(30);
+        } else if (result == 1) {
+            img1 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img1.setFitWidth(30);
+            img1.setFitHeight(30);
+            img2 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img2.setFitWidth(30);
+            img2.setFitHeight(30);
+            img3 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img3.setFitWidth(30);
+            img3.setFitHeight(30);
+
+        }
     }
 
 }
