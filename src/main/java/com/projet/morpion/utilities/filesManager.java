@@ -7,7 +7,7 @@ import java.util.List;
 public class FilesManager {
     public static List<String> getFilesInDirectory(String directoryPath) {
         List<String> fileList = new ArrayList<>();
-        File directory = new File(directoryPath); 
+        File directory = new File(directoryPath);
         if (!directory.isDirectory()) throw new IllegalArgumentException("The path is not found");
         File[] files = directory.listFiles();
         if (files != null) {
