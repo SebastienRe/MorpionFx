@@ -34,7 +34,7 @@ public class MenuController {
 
     @FXML
     protected void humanVShuman() {
-        SceneManager.getInstance().changeScene("play.fxml");
+        SceneManager.getInstance().changeScene("matriceDuJeu.fxml");
     }
 
     @FXML
