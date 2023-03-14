@@ -21,6 +21,7 @@ public class SceneManager {
 
     public void changeScene(String sceneName) {
         try {
+            Launcher.getMainStage().setResizable(false);
             FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(sceneName));
             Scene scene = new Scene(fxmlLoader.load(), 320, 240);
             Launcher.getMainStage().setScene(scene);
