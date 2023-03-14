@@ -8,12 +8,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.SettingsController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.SettingsController">
    <children>
-      <AnchorPane prefHeight="262.0" prefWidth="296.0">
+      <AnchorPane prefHeight="420.0" prefWidth="452.0">
          <children>
-            <GridPane fx:id="gridPane" layoutX="62.0" layoutY="28.0" prefHeight="185.0" prefWidth="197.0">
+            <GridPane fx:id="gridPane" layoutX="76.0" layoutY="41.0" prefHeight="262.0" prefWidth="301.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,25 +26,78 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="cell00" prefHeight="0.0" prefWidth="61.0" text="1" />
-                  <TextField fx:id="cell01" text="2" GridPane.columnIndex="1" />
-                  <TextField fx:id="cell10" text="3" GridPane.columnIndex="2" />
-                  <TextField fx:id="cell11" text="4" GridPane.rowIndex="1" />
-                  <TextField fx:id="cell20" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="cell21" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="cell02" text="7" GridPane.rowIndex="2" />
-                  <TextField fx:id="cell12" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="cell22" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="cell00" prefHeight="0.0" prefWidth="61.0" text="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell01" text="2" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell10" text="3" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell11" text="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell20" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell21" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell02" text="7" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell12" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="cell22" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
                </children>
             </GridPane>
-            <Label layoutX="27.0" layoutY="47.0" text="F" />
-            <Label layoutX="27.0" layoutY="112.0" text="M" />
-            <Label layoutX="26.0" layoutY="176.0" text="D" />
-            <Button layoutX="172.0" layoutY="213.0" mnemonicParsing="false" onAction="#saveNewConfig" text="Save" />
-            <Label layoutX="93.0" layoutY="14.0" text="L" />
-            <Label layoutX="154.0" layoutY="14.0" text="LR" />
-            <Label layoutX="213.0" layoutY="14.0" text="H" />
-            <Button layoutX="86.0" layoutY="213.0" mnemonicParsing="false" onAction="#retourMenu" text="Back" />
+            <Label layoutX="35.0" layoutY="69.0" prefHeight="27.0" prefWidth="9.0" text="F">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="31.0" layoutY="159.0" text="M">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="33.0" layoutY="245.0" text="D">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="124.0" layoutY="28.0" text="L">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="216.0" layoutY="28.0" text="LR">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="312.0" layoutY="28.0" text="H">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button layoutX="288.0" layoutY="312.0" mnemonicParsing="false" onAction="#saveNewConfig" text="Save">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="113.0" layoutY="312.0" mnemonicParsing="false" onAction="#retourMenu" text="Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
