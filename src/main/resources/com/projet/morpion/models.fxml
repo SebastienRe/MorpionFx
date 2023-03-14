@@ -10,11 +10,6 @@
 
 <VBox alignment="CENTER" prefHeight="237.0" prefWidth="353.0" spacing="8.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.ModelsController">
    <children>
-      <AnchorPane prefHeight="37.0" prefWidth="353.0">
-         <children>
-            <Button alignment="TOP_LEFT" layoutY="2.0" mnemonicParsing="false" onAction="#retourMenu" text="&lt;" />
-         </children>
-      </AnchorPane>
       <ScrollPane prefHeight="222.0" prefWidth="440.0">
          <content>
             <GridPane fx:id="grille" alignment="CENTER_LEFT" prefHeight="157.0" prefWidth="288.0">
@@ -29,6 +24,11 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button mnemonicParsing="false" onAction="#deleteButtonPressed" text="Delete" />
+      <AnchorPane prefHeight="37.0" prefWidth="353.0">
+         <children>
+            <Button alignment="TOP_LEFT" layoutX="80.0" mnemonicParsing="false" onAction="#retourMenu" text="Back" />
+            <Button layoutX="188.0" mnemonicParsing="false" onAction="#deleteButtonPressed" text="Delete" />
+         </children>
+      </AnchorPane>
    </children>
 </VBox>
