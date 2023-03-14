@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="ajout sauvegarde srl, rename controller">
-      <change afterPath="$PROJECT_DIR$/resources/models/model_1_253_0.3.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/models/model_3_1026_0.001.srl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/ModelsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/ModelsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/SceneManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/filesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/FilesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/FilesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/FilesManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +104,7 @@
       <workItem from="1678396919043" duration="42000" />
       <workItem from="1678779574453" duration="342000" />
       <workItem from="1678780348478" duration="7640000" />
-      <workItem from="1678810484226" duration="3664000" />
+      <workItem from="1678810484226" duration="3910000" />
     </task>
     <task id="LOCAL-00001" summary="apprentissage IA">
       <created>1678349067673</created>
