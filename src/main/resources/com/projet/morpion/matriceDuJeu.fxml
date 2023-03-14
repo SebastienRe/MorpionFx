@@ -33,7 +33,7 @@
             <Button fx:id="button8" mnemonicParsing="false" onAction="#jouePosition" prefHeight="98.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="replay" layoutX="103.0" layoutY="353.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Replay" visible="false">
+      <Button fx:id="replay" layoutX="103.0" layoutY="353.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="83.0" text="Replay" visible="false">
          <font>
             <Font size="18.0" />
          </font></Button>

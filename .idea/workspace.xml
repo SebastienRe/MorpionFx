@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="ajout sauvegarde srl, rename controller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/models/model_1_256_0.1.srl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/matriceDuJeu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/matriceDuJeu.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="ajout sauvegarde srl, rename controller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
