@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="ajout sauvegarde srl, rename controller">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/IMorpion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/PlayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/matriceDuJeu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/IMorpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/IMorpion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -30,7 +33,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2MlaVbH4BCMLVaKHYfBhGifDzZP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -95,6 +98,7 @@
       <workItem from="1678396919043" duration="42000" />
       <workItem from="1678779574453" duration="342000" />
       <workItem from="1678780348478" duration="1614000" />
+      <workItem from="1678790593343" duration="3313000" />
     </task>
     <task id="LOCAL-00001" summary="apprentissage IA">
       <created>1678349067673</created>
@@ -133,6 +137,72 @@
     <MESSAGE value="supprime exemple" />
     <MESSAGE value="ajout sauvegarde srl, rename controller" />
     <option name="LAST_COMMIT_MESSAGE" value="ajout sauvegarde srl, rename controller" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/projet/morpion/modelMorpion/Morpion.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
