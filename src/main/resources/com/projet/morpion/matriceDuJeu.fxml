@@ -31,5 +31,7 @@
             <Button fx:id="button8" mnemonicParsing="false" onAction="#jouePosition" prefHeight="98.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
+      <Button fx:id="replay" layoutX="125.0" layoutY="353.0" mnemonicParsing="false" text="Replay" visible="false" />
+      <Button fx:id="quit" layoutX="264.0" layoutY="353.0" mnemonicParsing="false" text="Quit" visible="false" />
    </children>
 </AnchorPane>
