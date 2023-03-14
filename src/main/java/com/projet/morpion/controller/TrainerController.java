@@ -23,6 +23,11 @@ public class TrainerController {
     @FXML
     private ProgressBar progress;
 
+    private static String difficulty = "F";
+
+    public static void setDifficulty(String difficulty) {
+        TrainerController.difficulty = difficulty;
+    }
     @FXML
     protected void onClick() {
 
@@ -35,7 +40,7 @@ public class TrainerController {
         //
         ConfigFileLoader cfl = new ConfigFileLoader();
         cfl.loadConfigFile("./resources/config.txt");
-        Config config = cfl.get("F");
+        Config config = cfl.get(difficulty);
         System.out.println("Test.main() : "+config);
         //
         //

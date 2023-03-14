@@ -76,7 +76,7 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label layoutX="124.0" layoutY="28.0" text="L">
+            <Label layoutX="319.0" layoutY="28.0" text="L">
                <font>
                   <Font size="18.0" />
                </font></Label>
@@ -84,7 +84,7 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label layoutX="312.0" layoutY="28.0" text="H">
+            <Label layoutX="123.0" layoutY="28.0" text="H">
                <font>
                   <Font size="18.0" />
                </font></Label>
