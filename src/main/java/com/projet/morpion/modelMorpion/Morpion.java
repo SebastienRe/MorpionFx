@@ -3,9 +3,6 @@ package com.projet.morpion.modelMorpion;
 public class Morpion implements IMorpion{
     private double [] matriceDuJeu;
 
-    public static double JOEUR_1 = -1;
-    public static double JOEUR_2 = 1;
-
     private boolean etatDeLaPartie = false;
     private int nombreDeTour = 0;
 
@@ -212,16 +209,7 @@ public class Morpion implements IMorpion{
     public boolean isEndGame() {
         int i=0;
         boolean valeurDeRetour = false;
-        /*while (i<9)
-        {
-            if(matriceDuJeu[i] == 0)
-            {
-                System.out.println("Grille pas rempli entierement");
-                valeurDeRetour = false;
-                i = 45;
-            }else
-                i++;
-        }*/
+
         if(this.isGrilleRempli())
         {
             valeurDeRetour = true;

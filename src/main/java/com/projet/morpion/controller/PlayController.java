@@ -21,6 +21,7 @@ public class PlayController {
 
     @FXML
     private Label resultat;
+    private ImageView img;
     private ImageView img1, img2, img3;
     @FXML
     private GridPane matriceDuJeu;
@@ -34,42 +35,32 @@ public class PlayController {
     private Morpion morpion = new Morpion();
 
     @FXML
-    protected void jouePosition(Event event)
-    {
+    protected void jouePosition(Event event) {
         Button positionJoue = (Button) event.getSource();
         Character idJouer = positionJoue.getId().charAt(6);
         System.out.println("id de la case jouée " + idJouer);
-        if(isJoeurOne) {
+        createImgPlay();
+        if (isJoeurOne) {
             morpion.afterPlayerOneMove(Integer.parseInt(idJouer.toString()));
-            ImageView img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\cross2.png");
-            img.setFitWidth(30);
-            img.setFitHeight(30);
             positionJoue.setGraphic(img);
-            //positionJoue.setText("1");
             isJoeurOne = false;
             positionJoue.setDisable(true);
-        }
-        else
-        {
+        } else {
             morpion.afterPlayerTwoMove(Integer.parseInt(idJouer.toString()));
-            ImageView img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\circle2.png");
-            img.setFitWidth(30);
-            img.setFitHeight(30);
             positionJoue.setGraphic(img);
-            //positionJoue.setText("2");
             isJoeurOne = true;
             positionJoue.setDisable(true);
         }
-        if(morpion.getNombreDeTour() >= 3) {
+        if (morpion.getNombreDeTour() >= 3) {
             if (morpion.isWin()) {
                 finAvecGangant = true;
                 System.out.println("###########");
                 for (Node node : matriceDuJeu.getChildren()) {
                     ((Button) node).setDisable(true);
                 }
-                int [] positionGagnante = morpion.getPositionWinner();
+                int[] positionGagnante = morpion.getPositionWinner();
 
-                createImg();
+                createImgWin();
                 Button btn1 = (Button) matriceDuJeu.getChildren().get(positionGagnante[0]);
                 btn1.setGraphic(img1);
 
@@ -81,23 +72,19 @@ public class PlayController {
 
             }
         }
-        if(morpion.isEndGame())
-        {
+        if (morpion.isEndGame()) {
             System.out.println("fini");
-            if(morpion.getNombreDeTour()>=9 && !finAvecGangant)
-            {
+            if (morpion.getNombreDeTour() >= 9 && !finAvecGangant) {
                 resultat.setFont(new Font("Arial", 20));
                 resultat.setText("Fin de la partie, match nul");
                 resultat.setVisible(true);
             }
-            if(morpion.getIdWinner() == -1)
-            {
+            if (morpion.getIdWinner() == -1) {
                 resultat.setFont(new Font("Arial", 20));
                 resultat.setText("Félicitation joueur 1");
                 resultat.setVisible(true);
             }
-            if(morpion.getIdWinner() == 1)
-            {
+            if (morpion.getIdWinner() == 1) {
                 resultat.setFont(new Font("Arial", 20));
                 resultat.setText("Félicitation joueur 2");
                 resultat.setVisible(true);
@@ -106,19 +93,19 @@ public class PlayController {
                 SceneManager.getInstance().changeScene("matriceDuJeu.fxml");
             });
             replay.setVisible(true);
-            quit.setOnAction(actionEvent -> {
-                SceneManager.getInstance().changeScene("menu.fxml");
-            });
-            quit.setVisible(true);
         }
 
 
     }
-    private void createImg()
+
+    @FXML
+    protected void onClickBack()
     {
+        SceneManager.getInstance().changeScene("menu.fxml");
+    }
+    private void createImgWin() {
         int result = morpion.getIdWinner();
-        if(result == -1)
-        {
+        if (result == -1) {
             img1 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
             img1.setFitWidth(30);
             img1.setFitHeight(30);
@@ -142,4 +129,20 @@ public class PlayController {
         }
     }
 
+    private void createImgPlay() {
+        if(isJoeurOne)
+        {
+            img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\cross2.png");
+            img.setFitWidth(30);
+            img.setFitHeight(30);
+        }
+        else
+        {
+            img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\circle2.png");
+            img.setFitWidth(30);
+            img.setFitHeight(30);
+        }
+    }
 }
+
+

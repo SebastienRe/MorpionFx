@@ -32,8 +32,8 @@
             <Button fx:id="button8" mnemonicParsing="false" onAction="#jouePosition" prefHeight="98.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="replay" layoutX="125.0" layoutY="353.0" mnemonicParsing="false" text="Replay" visible="false" />
-      <Button fx:id="quit" layoutX="264.0" layoutY="353.0" mnemonicParsing="false" text="Quit" visible="false" />
+      <Button fx:id="replay" layoutX="157.0" layoutY="353.0" mnemonicParsing="false" text="Replay" visible="false" />
+      <Button fx:id="quit" layoutX="239.0" layoutY="353.0" mnemonicParsing="false" onAction="#onClickBack" text="Back" />
       <Label fx:id="resultat" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="14.0" prefHeight="17.0" prefWidth="347.0" text="Label" visible="false" />
    </children>
 </AnchorPane>
