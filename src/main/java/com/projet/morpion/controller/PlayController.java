@@ -4,14 +4,23 @@ import com.projet.morpion.modelMorpion.Morpion;
 import com.projet.morpion.utilities.SceneManager;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class PlayController {
 
+    @FXML
+    private Label resultat;
     private ImageView img1, img2, img3;
     @FXML
     private GridPane matriceDuJeu;
@@ -21,6 +30,7 @@ public class PlayController {
     @FXML
     private Button quit;
     private boolean isAbleToSearchWinner = false;
+    private boolean finAvecGangant = false;
     private Morpion morpion = new Morpion();
 
     @FXML
@@ -52,6 +62,7 @@ public class PlayController {
         }
         if(morpion.getNombreDeTour() >= 3) {
             if (morpion.isWin()) {
+                finAvecGangant = true;
                 System.out.println("###########");
                 for (Node node : matriceDuJeu.getChildren()) {
                     ((Button) node).setDisable(true);
@@ -73,6 +84,24 @@ public class PlayController {
         if(morpion.isEndGame())
         {
             System.out.println("fini");
+            if(morpion.getNombreDeTour()>=9 && !finAvecGangant)
+            {
+                resultat.setFont(new Font("Arial", 20));
+                resultat.setText("Fin de la partie, match nul");
+                resultat.setVisible(true);
+            }
+            if(morpion.getIdWinner() == -1)
+            {
+                resultat.setFont(new Font("Arial", 20));
+                resultat.setText("Félicitation joueur 1");
+                resultat.setVisible(true);
+            }
+            if(morpion.getIdWinner() == 1)
+            {
+                resultat.setFont(new Font("Arial", 20));
+                resultat.setText("Félicitation joueur 2");
+                resultat.setVisible(true);
+            }
             replay.setOnAction(actionEvent -> {
                 SceneManager.getInstance().changeScene("matriceDuJeu.fxml");
             });
