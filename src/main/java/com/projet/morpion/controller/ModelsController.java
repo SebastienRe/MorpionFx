@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 
 import java.util.List;
 
@@ -18,8 +19,17 @@ public class ModelsController {
     @FXML
     public void initialize() {
         List<String> files = filesManager.getFilesInDirectory("./resources/models/");
-        for (String file : files)
-            grille.addRow(grille.getRowCount(), new Label("  "+file), new CheckBox());
+        for (String file : files) {
+            Label label = new Label("  " + file);
+            label.setPrefWidth(300);
+            label.setPrefHeight(30);
+            label.setFont(new Font("Arial", 20));
+            CheckBox checkBox = new CheckBox();
+            checkBox.setPrefWidth(30);
+            checkBox.setPrefHeight(30);
+
+            grille.addRow(grille.getRowCount(), label, checkBox);
+        }
     }
 
     @FXML

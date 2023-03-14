@@ -22,21 +22,21 @@
           </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="400.0" prefWidth="452.0">
          <children>
-            <Button alignment="TOP_CENTER" layoutX="131.0" layoutY="67.0" mnemonicParsing="false" onAction="#humanVShuman" prefHeight="71.0" prefWidth="317.0" text="H   vs.   H">
+            <Button alignment="TOP_CENTER" layoutX="66.0" layoutY="67.0" mnemonicParsing="false" onAction="#humanVShuman" prefHeight="71.0" prefWidth="317.0" text="H   vs.   H">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button alignment="TOP_CENTER" layoutX="132.0" layoutY="193.0" mnemonicParsing="false" onAction="#humanVSai" prefHeight="107.0" prefWidth="317.0" text="H   vs.   AI">
+            <Button alignment="TOP_CENTER" layoutX="66.0" layoutY="192.0" mnemonicParsing="false" onAction="#humanVSai" prefHeight="107.0" prefWidth="317.0" text="H   vs.   AI">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <CheckBox fx:id="easy" layoutX="173.0" layoutY="269.0" mnemonicParsing="false" onAction="#easyCheck" text="Easy" />
-            <CheckBox fx:id="medium" layoutX="258.0" layoutY="269.0" mnemonicParsing="false" onAction="#mediumCheck" text="Medium" />
-            <CheckBox fx:id="hard" layoutX="359.0" layoutY="269.0" mnemonicParsing="false" onAction="#hardCheck" text="Hard" />
+            <CheckBox fx:id="easy" layoutX="112.0" layoutY="270.0" mnemonicParsing="false" onAction="#easyCheck" text="Easy" />
+            <CheckBox fx:id="medium" layoutX="192.0" layoutY="270.0" mnemonicParsing="false" onAction="#mediumCheck" text="Medium" />
+            <CheckBox fx:id="hard" layoutX="290.0" layoutY="270.0" mnemonicParsing="false" onAction="#hardCheck" text="Hard" />
          </children></AnchorPane>
    </children>
 </VBox>

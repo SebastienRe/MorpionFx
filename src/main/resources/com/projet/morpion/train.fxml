@@ -4,15 +4,28 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="247.0" prefWidth="236.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.TrainerController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.TrainerController">
    <children>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <VBox alignment="CENTER" prefHeight="406.0" prefWidth="452.0" spacing="20.0">
          <children>
-             <Button fx:id="start" onAction="#onClick" text="Start" />
-            <TextField fx:id="field" prefHeight="25.0" prefWidth="187.0" />
-            <ProgressBar fx:id="progress" prefHeight="18.0" prefWidth="179.0" progress="0.0" />
-            <Button mnemonicParsing="false" onAction="#retourMenu" text="Back" />
+             <Button fx:id="start" onAction="#onClick" text="Start">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="field" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="384.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <ProgressBar fx:id="progress" minHeight="-Infinity" prefHeight="40.0" prefWidth="303.0" progress="0.0" />
+            <Button mnemonicParsing="false" onAction="#retourMenu" text="Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </children>

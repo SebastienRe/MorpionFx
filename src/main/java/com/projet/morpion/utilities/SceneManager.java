@@ -23,7 +23,7 @@ public class SceneManager {
         try {
             Launcher.getMainStage().setResizable(false);
             FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(sceneName));
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            Scene scene = new Scene(fxmlLoader.load(), 452, 400);
             Launcher.getMainStage().setScene(scene);
         }
         catch (IOException e) {
