@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class filesManager {
+public class FilesManager {
     public static List<String> getFilesInDirectory(String directoryPath) {
         List<String> fileList = new ArrayList<>();
         File directory = new File(directoryPath);

@@ -1,10 +1,8 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.Launcher;
 import com.projet.morpion.utilities.SceneManager;
-import com.projet.morpion.utilities.filesManager;
+import com.projet.morpion.utilities.FilesManager;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -18,7 +16,7 @@ public class ModelsController {
 
     @FXML
     public void initialize() {
-        List<String> files = filesManager.getFilesInDirectory("./resources/models/");
+        List<String> files = FilesManager.getFilesInDirectory("./resources/models/");
         for (String file : files) {
             Label label = new Label("  " + file);
             label.setPrefWidth(300);
@@ -44,7 +42,7 @@ public class ModelsController {
                 //on récupère le nom du fichier
                 String fileName = ((Label) grille.getChildren().get(i - 1)).getText().replace("  ", "");
                 //on supprime le fichier
-                filesManager.deleteFile("./resources/models/" + fileName);
+                FilesManager.deleteFile("./resources/models/" + fileName);
                 //on supprime la ligne de la grille
                 grille.getChildren().remove(i);
                 grille.getChildren().remove(i - 1);

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class SceneManager {
     private static SceneManager instance = null;

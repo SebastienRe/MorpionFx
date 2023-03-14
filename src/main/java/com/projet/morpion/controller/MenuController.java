@@ -1,11 +1,8 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.Launcher;
 import com.projet.morpion.utilities.SceneManager;
-import com.projet.morpion.utilities.filesManager;
+import com.projet.morpion.utilities.FilesManager;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -89,7 +86,7 @@ public class MenuController {
 
     private void trainORplay(String difficulty) {
         String modelFile = getModelSrl(difficulty);
-        List<String> models = filesManager.getFilesInDirectory("./resources/models/");
+        List<String> models = FilesManager.getFilesInDirectory("./resources/models/");
         pane.getChildren().clear();
         TrainerController.setDifficulty(difficulty);
         if (models.contains(modelFile)) { // if the model exists
