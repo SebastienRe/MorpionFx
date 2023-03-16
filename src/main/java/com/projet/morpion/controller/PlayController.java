@@ -4,18 +4,12 @@ import com.projet.morpion.modelMorpion.Morpion;
 import com.projet.morpion.utilities.SceneManager;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 public class PlayController {
 
@@ -31,7 +25,7 @@ public class PlayController {
     @FXML
     private Button quit;
     private boolean isAbleToSearchWinner = false;
-    private boolean finAvecGangant = false;
+    private boolean finAvecGagnant = false;
     private Morpion morpion = new Morpion();
 
     @FXML
@@ -53,7 +47,7 @@ public class PlayController {
         }
         if (morpion.getNombreDeTour() >= 3) {
             if (morpion.isWin()) {
-                finAvecGangant = true;
+                finAvecGagnant = true;
                 System.out.println("###########");
                 for (Node node : matriceDuJeu.getChildren()) {
                     ((Button) node).setDisable(true);
@@ -74,7 +68,7 @@ public class PlayController {
         }
         if (morpion.isEndGame()) {
             System.out.println("fini");
-            if (morpion.getNombreDeTour() >= 9 && !finAvecGangant) {
+            if (morpion.getNombreDeTour() >= 9 && !finAvecGagnant) {
                 resultat.setFont(new Font("Arial", 20));
                 resultat.setText("Fin de la partie, match nul");
                 resultat.setVisible(true);
@@ -106,23 +100,23 @@ public class PlayController {
     private void createImgWin() {
         int result = morpion.getIdWinner();
         if (result == -1) {
-            img1 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img1 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img1.setFitWidth(30);
             img1.setFitHeight(30);
-            img2 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img2 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img2.setFitWidth(30);
             img2.setFitHeight(30);
-            img3 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\winCross2.png");
+            img3 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img3.setFitWidth(30);
             img3.setFitHeight(30);
         } else if (result == 1) {
-            img1 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img1 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img1.setFitWidth(30);
             img1.setFitHeight(30);
-            img2 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img2 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img2.setFitWidth(30);
             img2.setFitHeight(30);
-            img3 = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\win_circle2.png");
+            img3 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img3.setFitWidth(30);
             img3.setFitHeight(30);
 
@@ -131,17 +125,11 @@ public class PlayController {
 
     private void createImgPlay() {
         if(isJoeurOne)
-        {
-            img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\cross2.png");
-            img.setFitWidth(30);
-            img.setFitHeight(30);
-        }
+            img = new ImageView("file:./resources/images/TicTacToe/cross2.png");
         else
-        {
-            img = new ImageView("C:\\projets\\javaFX\\MorpionFx\\resources\\images\\TicTacToe\\circle2.png");
-            img.setFitWidth(30);
-            img.setFitHeight(30);
-        }
+            img = new ImageView("file:./resources/images/TicTacToe/circle2.png");
+        img.setFitWidth(30);
+        img.setFitHeight(30);
     }
 }
 
