@@ -1,6 +1,6 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.utilities.SceneManager;
+import com.projet.morpion.models.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;

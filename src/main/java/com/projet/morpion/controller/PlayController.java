@@ -1,7 +1,7 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.modelMorpion.Morpion;
-import com.projet.morpion.utilities.SceneManager;
+import com.projet.morpion.models.Morpion;
+import com.projet.morpion.models.SceneManager;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

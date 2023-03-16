@@ -1,6 +1,6 @@
-package com.projet.morpion.modelMorpion;
+package com.projet.morpion.models;
 
-public class Morpion implements IMorpion{
+public class Morpion{
     private double [] matriceDuJeu;
     private boolean etatDeLaPartie = false;
     private int nombreDeTour = 0;
@@ -11,7 +11,6 @@ public class Morpion implements IMorpion{
         matriceDuJeu = new double[9];
     }
 
-    @Override
     public boolean isWin() {
         for (int i = 0; i < 9; i++) {
             if (isWinDiagonal(i))
@@ -86,7 +85,6 @@ public class Morpion implements IMorpion{
         return false;
     }
 
-    @Override
     public boolean isPositionPlayable(int position) {
         if (matriceDuJeu[position] == 0) {
             System.out.println("on peut jouer cette position");

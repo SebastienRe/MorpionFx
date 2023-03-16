@@ -1,6 +1,6 @@
 package com.projet.morpion;
 
-import com.projet.morpion.utilities.SceneManager;
+import com.projet.morpion.models.SceneManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

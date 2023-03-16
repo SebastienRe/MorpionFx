@@ -1,4 +1,4 @@
-package com.projet.morpion.utilities;
+package com.projet.morpion.models;
 
 import java.io.BufferedReader;
 import java.io.File;

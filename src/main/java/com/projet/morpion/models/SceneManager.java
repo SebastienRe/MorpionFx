@@ -1,4 +1,4 @@
-package com.projet.morpion.utilities;
+package com.projet.morpion.models;
 
 import com.projet.morpion.Launcher;
 import javafx.fxml.FXMLLoader;
