@@ -36,44 +36,23 @@ public class Morpion implements IMorpion{
     private boolean isWinDiagonal(int position)
     {
         if(position == 0) {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 4] == -1 && matriceDuJeu[position + 8] == -1) {
+            if (matriceDuJeu[position] == matriceDuJeu[position + 4] && matriceDuJeu[position] == matriceDuJeu[position + 8] && matriceDuJeu[position] != 0) {
                 positionWinner[0] = position;
                 positionWinner[1] = position + 4;
                 positionWinner[2] = position + 8;
-                System.out.println("joueur 1 a gagné");
-                idWinner = -1;
-                etatDeLaPartie = true;
-                return true;
-            } else if
-            (matriceDuJeu[position] == 1 && matriceDuJeu[position + 4] == 1 && matriceDuJeu[position + 8] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 4;
-                positionWinner[2] = position + 8;
-                idWinner = 1;
-                System.out.println("joeur 2 a gagné");
+                idWinner = (int) matriceDuJeu[position];
                 return true;
             } else
                 return false;
         }
         if( position == 2)
         {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 2] == -1 && matriceDuJeu[position + 4] == -1) {
+            if (matriceDuJeu[position] == matriceDuJeu[position + 2] && matriceDuJeu[position] == matriceDuJeu[position + 4] && matriceDuJeu[position] != 0) {
                 positionWinner[0] = position;
                 positionWinner[1] = position + 2;
                 positionWinner[2] = position + 4;
-                idWinner = -1;
-                System.out.println("joueur 1 a gagné");
-                etatDeLaPartie = true;
-
-            } else if
-            (matriceDuJeu[position] == 1 && matriceDuJeu[position + 2] == 1 && matriceDuJeu[position + 4] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 2;
-                positionWinner[2] = position + 4;
-                idWinner = 1;
-                System.out.println("joeur 2 a gagné");
-                etatDeLaPartie = true;
-
+                idWinner = (int) matriceDuJeu[position];
+                return true;
             } else
                 return false;
         }
@@ -81,134 +60,30 @@ public class Morpion implements IMorpion{
     }
     private boolean isWinHorizontal(int position)
     {
-        if(position == 0) {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 1] == -1 && matriceDuJeu[position + 2] == -1) {
+        if(position == 0 || position == 3 || position == 6) {
+            if (matriceDuJeu[position] == matriceDuJeu[position + 1] && matriceDuJeu[position] == matriceDuJeu[position + 2] && matriceDuJeu[position] != 0) {
                 positionWinner[0] = position;
                 positionWinner[1] = position + 1;
                 positionWinner[2] = position + 2;
-                idWinner = -1;
-                System.out.println("joueur 1 a gagné");
-                etatDeLaPartie = true;
-
-            } else if
-            (matriceDuJeu[position] == 1 && matriceDuJeu[position + 1] == 1 && matriceDuJeu[position + 2] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 1;
-                positionWinner[2] = position + 2;
-                idWinner = 1;
-                System.out.println("joueur 2 a gagné");
-                etatDeLaPartie = true;
-
-            }
-        }
-        if(position == 3) {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 1] == -1 && matriceDuJeu[position + 2] == -1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 1;
-                positionWinner[2] = position + 2;
-                idWinner = -1;
-                System.out.println("joueur 1 a gagné");
-                etatDeLaPartie = true;
+                idWinner = (int) matriceDuJeu[position];
                 return true;
-            } else if
-            (matriceDuJeu[position] == 1 && matriceDuJeu[position + 1] == 1 && matriceDuJeu[position + 2] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 1;
-                positionWinner[2] = position + 2;
-                idWinner = 1;
-                System.out.println("joueur 2 a gagné");
-                etatDeLaPartie = true;
             }
         }
-        if(position == 6) {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 1] == -1 && matriceDuJeu[position + 2] == -1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 1;
-                positionWinner[2] = position + 2;
-                idWinner = -1;
-                System.out.println("joueur 1 a gagné");
-                etatDeLaPartie = true;
-
-            } else if
-            (matriceDuJeu[position] == 1 && matriceDuJeu[position + 1] == 1 && matriceDuJeu[position + 2] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 1;
-                positionWinner[2] = position + 2;
-                idWinner = 1;
-                System.out.println("joueur 2 a gagné");
-                etatDeLaPartie = true;
-
-            }
-        }
-            return etatDeLaPartie;
+        return false;
     }
+
     private boolean isWinVerical(int position)
     {
-        if(position == 0) {
-            if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 3] == -1 && matriceDuJeu[position + 6] == -1) {
+        if(position == 0 || position == 1 || position == 2) {
+            if (matriceDuJeu[position] == matriceDuJeu[position + 3] && matriceDuJeu[position] == matriceDuJeu[position + 6] && matriceDuJeu[position] != 0) {
                 positionWinner[0] = position;
                 positionWinner[1] = position + 3;
                 positionWinner[2] = position + 6;
-                idWinner = -1;
-                System.out.println("joueur 1 a gagné");
-                etatDeLaPartie = true;
-            } else if (matriceDuJeu[position] == 1 && matriceDuJeu[position + 3] == 1 && matriceDuJeu[position + 6] == 1) {
-                positionWinner[0] = position;
-                positionWinner[1] = position + 3;
-                positionWinner[2] = position + 6;
-                idWinner = 1;
-                System.out.println("joueur 2 a gagné");
-                etatDeLaPartie = true;
+                idWinner = (int) matriceDuJeu[position];
+                return true;
             }
         }
-            if(position == 1)
-            {
-                if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 3] == -1 && matriceDuJeu[position + 6] == -1) {
-                    positionWinner[0] = position;
-                    positionWinner[1] = position + 3;
-                    positionWinner[2] = position + 6;
-                    idWinner = -1;
-                    System.out.println("joueur 1 a gagné");
-                    etatDeLaPartie = true;
-                } else if (matriceDuJeu[position] == 1 && matriceDuJeu[position + 3] == 1 && matriceDuJeu[position + 6] == 1) {
-                    positionWinner[0] = position;
-                    positionWinner[1] = position + 3;
-                    positionWinner[2] = position + 6;
-                    idWinner = 1;
-                    System.out.println("joueur 2 a gagné");
-                    etatDeLaPartie = true;
-                }
-            }
-            if(position == 2)
-                if (matriceDuJeu[position] == -1 && matriceDuJeu[position + 3] == -1 && matriceDuJeu[position + 6] == -1) {
-                    positionWinner[0] = position;
-                    positionWinner[1] = position + 3;
-                    positionWinner[2] = position + 6;
-                    idWinner = -1;
-                    System.out.println("joueur 1 a gagné");
-                    etatDeLaPartie = true;
-                } else if (matriceDuJeu[position] == 1 && matriceDuJeu[position + 3] == 1 && matriceDuJeu[position + 6] == 1) {
-                    positionWinner[0] = position;
-                    positionWinner[1] = position + 3;
-                    positionWinner[2] = position + 6;
-                    idWinner = 1;
-                    System.out.println("joueur 2 a gagné");
-                    etatDeLaPartie = true;
-                }
-        return etatDeLaPartie;
-    }
-    @Override
-    public boolean isEndGame() {
-        int i=0;
-        boolean valeurDeRetour = false;
-
-        if(this.isGrilleRempli())
-        {
-            valeurDeRetour = true;
-        }
-        if(etatDeLaPartie)
-            valeurDeRetour = true;
-       return valeurDeRetour;
+        return false;
     }
 
     @Override
@@ -222,13 +97,6 @@ public class Morpion implements IMorpion{
         }
     }
 
-    public double[] getMatriceDuJeu() {
-        return matriceDuJeu;
-    }
-
-    public void setMatriceDuJeu(double[] matriceDuJeu) {
-        this.matriceDuJeu = matriceDuJeu;
-    }
     public void afterPlayerOneMove(int positionPlayed)
     {
         if(isPositionPlayable(positionPlayed))
@@ -246,14 +114,7 @@ public class Morpion implements IMorpion{
         }
     }
 
-    public boolean isEtatDeLaPartie() {
-        return etatDeLaPartie;
-    }
-
-    public void setEtatDeLaPartie(boolean etatDeLaPartie) {
-        this.etatDeLaPartie = etatDeLaPartie;
-    }
-    private boolean isGrilleRempli()
+    public boolean isGrilleRempli()
     {
         if(nombreDeTour == 9)
         {
@@ -266,23 +127,11 @@ public class Morpion implements IMorpion{
         return nombreDeTour;
     }
 
-    public void setNombreDeTour(int nombreDeTour) {
-        this.nombreDeTour = nombreDeTour;
-    }
-
     public int[] getPositionWinner() {
         return positionWinner;
     }
 
-    public void setPositionWinner(int[] positionWinner) {
-        this.positionWinner = positionWinner;
-    }
-
     public int getIdWinner() {
         return idWinner;
-    }
-
-    public void setIdWinner(int idWinner) {
-        this.idWinner = idWinner;
     }
 }

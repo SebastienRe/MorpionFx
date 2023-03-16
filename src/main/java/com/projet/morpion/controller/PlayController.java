@@ -21,10 +21,6 @@ public class PlayController {
     private boolean isJoeurOne = true;
     @FXML
     private Button replay;
-    @FXML
-    private Button quit;
-    private boolean isAbleToSearchWinner = false;
-    private boolean finAvecGagnant = false;
     private static boolean isVSai = false;
     private static String model = "";
     private Morpion morpion = new Morpion();
@@ -64,39 +60,40 @@ public class PlayController {
         positionJoue.setGraphic(img);
         positionJoue.setDisable(true);
 
-        if (morpion.getNombreDeTour() >= 3) {
-            if (morpion.isWin()) {
-                finAvecGagnant = true;
-                System.out.println("###########");
-                for (Node node : matriceDuJeu.getChildren()) {
-                    ((Button) node).setDisable(true);
-                }
-                int[] positionGagnante = morpion.getPositionWinner();
+        if (morpion.getNombreDeTour() < 3) // Si le nombre de tour est inférieur à 3, on ne peut pas gagner
+            return;
 
-                createImgWin();
-                Button btn1 = (Button) matriceDuJeu.getChildren().get(positionGagnante[0]);
-                btn1.setGraphic(img1);
+        boolean isWin = morpion.isWin();
+        boolean isGrilleRemplis = morpion.isGrilleRempli();
 
-                Button btn2 = (Button) matriceDuJeu.getChildren().get(positionGagnante[1]);
-                btn2.setGraphic(img2);
-
-                Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
-                btn3.setGraphic(img3);
-
+        if (isWin) { // Si il y a un gagnant colore les cases gagnantes
+            for (Node node : matriceDuJeu.getChildren()) {
+                ((Button) node).setDisable(true);
             }
-        }
-        if (morpion.isEndGame()) {
-            System.out.println("fini");
+            int[] positionGagnante = morpion.getPositionWinner();
 
-            if (morpion.getNombreDeTour() >= 9 && !finAvecGagnant)
-                affichageHaut.setText("Fin de la partie, match nul");
+            createImgWin();
+            Button btn1 = (Button) matriceDuJeu.getChildren().get(positionGagnante[0]);
+            btn1.setGraphic(img1);
+
+            Button btn2 = (Button) matriceDuJeu.getChildren().get(positionGagnante[1]);
+            btn2.setGraphic(img2);
+
+            Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
+            btn3.setGraphic(img3);
+        }
+
+        if ( isGrilleRemplis || isWin) { // si partie fini
+            System.out.println("fini");
+            if (isGrilleRemplis && !isWin)
+                affichageHaut.setText("end game, no winner");
             else if (morpion.getIdWinner() == -1)
-                affichageHaut.setText("Félicitation joueur 1");
+                affichageHaut.setText("Player 1 win");
             else if (morpion.getIdWinner() == 1)
                 if (isVSai)
-                    affichageHaut.setText("Félicitation AI");
+                    affichageHaut.setText("AI win");
                 else
-                    affichageHaut.setText("Félicitation joueur 2");
+                    affichageHaut.setText("Player 2 win");
             else
                 throw new IllegalStateException("Unexpected value: " + morpion.getIdWinner());
             affichageHaut.setVisible(true);
