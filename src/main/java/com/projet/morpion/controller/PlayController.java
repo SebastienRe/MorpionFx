@@ -12,9 +12,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 
 public class PlayController {
-
     @FXML
-    private Label resultat;
+    private Label affichageHaut;
     private ImageView img;
     private ImageView img1, img2, img3;
     @FXML
@@ -26,25 +25,45 @@ public class PlayController {
     private Button quit;
     private boolean isAbleToSearchWinner = false;
     private boolean finAvecGagnant = false;
+    private static boolean isVSai = false;
+    private static String model = "";
     private Morpion morpion = new Morpion();
+
+    @FXML
+    protected void initialize() {
+        replay.setOnAction(actionEvent -> { // Bouton replay
+            SceneManager.getInstance().changeScene("jeu.fxml");
+        });
+
+        affichageHaut.setFont(new Font("Arial", 20));
+        if (isVSai)
+            affichageHaut.setText("Player 1 VS AI");
+        else
+            affichageHaut.setText("Player 1 VS Player 2");
+        affichageHaut.setVisible(true);
+
+
+    }
+    public static void setAi(boolean isVSai) {
+        PlayController.isVSai = isVSai;
+    }
 
     @FXML
     protected void jouePosition(Event event) {
         Button positionJoue = (Button) event.getSource();
-        Character idJouer = positionJoue.getId().charAt(6);
-        System.out.println("id de la case jouée " + idJouer);
-        createImgPlay();
+        int idCaseJouee = Integer.parseInt(String.valueOf(positionJoue.getId().charAt(6)));
+        System.out.println("id de la case jouée " + idCaseJouee);
+        createImgPlay(); // Création de l'image du joueur qui joue
         if (isJoeurOne) {
-            morpion.afterPlayerOneMove(Integer.parseInt(idJouer.toString()));
-            positionJoue.setGraphic(img);
-            isJoeurOne = false;
-            positionJoue.setDisable(true);
+            morpion.afterPlayerOneMove(idCaseJouee);
+            isJoeurOne = false; // On change de joueur
         } else {
-            morpion.afterPlayerTwoMove(Integer.parseInt(idJouer.toString()));
-            positionJoue.setGraphic(img);
-            isJoeurOne = true;
-            positionJoue.setDisable(true);
+            morpion.afterPlayerTwoMove(idCaseJouee);
+            isJoeurOne = true; // On change de joueur
         }
+        positionJoue.setGraphic(img);
+        positionJoue.setDisable(true);
+
         if (morpion.getNombreDeTour() >= 3) {
             if (morpion.isWin()) {
                 finAvecGagnant = true;
@@ -68,24 +87,19 @@ public class PlayController {
         }
         if (morpion.isEndGame()) {
             System.out.println("fini");
-            if (morpion.getNombreDeTour() >= 9 && !finAvecGagnant) {
-                resultat.setFont(new Font("Arial", 20));
-                resultat.setText("Fin de la partie, match nul");
-                resultat.setVisible(true);
-            }
-            if (morpion.getIdWinner() == -1) {
-                resultat.setFont(new Font("Arial", 20));
-                resultat.setText("Félicitation joueur 1");
-                resultat.setVisible(true);
-            }
-            if (morpion.getIdWinner() == 1) {
-                resultat.setFont(new Font("Arial", 20));
-                resultat.setText("Félicitation joueur 2");
-                resultat.setVisible(true);
-            }
-            replay.setOnAction(actionEvent -> {
-                SceneManager.getInstance().changeScene("matriceDuJeu.fxml");
-            });
+
+            if (morpion.getNombreDeTour() >= 9 && !finAvecGagnant)
+                affichageHaut.setText("Fin de la partie, match nul");
+            else if (morpion.getIdWinner() == -1)
+                affichageHaut.setText("Félicitation joueur 1");
+            else if (morpion.getIdWinner() == 1)
+                if (isVSai)
+                    affichageHaut.setText("Félicitation AI");
+                else
+                    affichageHaut.setText("Félicitation joueur 2");
+            else
+                throw new IllegalStateException("Unexpected value: " + morpion.getIdWinner());
+            affichageHaut.setVisible(true);
             replay.setVisible(true);
         }
 
@@ -101,26 +115,20 @@ public class PlayController {
         int result = morpion.getIdWinner();
         if (result == -1) {
             img1 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
-            img1.setFitWidth(30);
-            img1.setFitHeight(30);
             img2 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
-            img2.setFitWidth(30);
-            img2.setFitHeight(30);
             img3 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
-            img3.setFitWidth(30);
-            img3.setFitHeight(30);
         } else if (result == 1) {
             img1 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
-            img1.setFitWidth(30);
-            img1.setFitHeight(30);
             img2 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
-            img2.setFitWidth(30);
-            img2.setFitHeight(30);
             img3 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
-            img3.setFitWidth(30);
-            img3.setFitHeight(30);
 
         }
+        img1.setFitWidth(30);
+        img1.setFitHeight(30);
+        img2.setFitWidth(30);
+        img2.setFitHeight(30);
+        img3.setFitWidth(30);
+        img3.setFitHeight(30);
     }
 
     private void createImgPlay() {

@@ -2,43 +2,35 @@ package com.projet.morpion.modelMorpion;
 
 public class Morpion implements IMorpion{
     private double [] matriceDuJeu;
-
     private boolean etatDeLaPartie = false;
     private int nombreDeTour = 0;
-
     private int idWinner = 0;
-
     private int [] positionWinner= new int[3];
     public Morpion()
     {
         matriceDuJeu = new double[9];
     }
+
     @Override
     public boolean isWin() {
-        int i = 0;
-        boolean valeurDeRetour = false;
-        while (i< 9) {
-
-                if (isWinDiagonal(i))
-                {
-                    System.out.println("tu as gagné");
-                    return  true;
-                }
-                if(isWinHorizontal(i))
-                {
-                    System.out.println("gagne horizontal");
-                    return  true;
-                }
-                if (isWinVerical(i))
-                {
-                    System.out.println("gagne vertical");
-                    return true;
-                }else
-                    i++;
-
-
+        for (int i = 0; i < 9; i++) {
+            if (isWinDiagonal(i))
+            {
+                System.out.println("gagne diagonal");
+                return  true;
+            }
+            if(isWinHorizontal(i))
+            {
+                System.out.println("gagne horizontal");
+                return  true;
+            }
+            if (isWinVerical(i))
+            {
+                System.out.println("gagne vertical");
+                return true;
+            }
         }
-        return valeurDeRetour;
+        return false;
     }
 
     private boolean isWinDiagonal(int position)

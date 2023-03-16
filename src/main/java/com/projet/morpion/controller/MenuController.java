@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.layout.Pane;
 
 import java.io.*;
@@ -20,6 +21,9 @@ public class MenuController {
     CheckBox hard;
     @FXML
     Pane pane;
+    String model = "";
+
+    boolean canStart = false;
     @FXML
     protected void onClickSettings() throws IOException {
         SceneManager.getInstance().changeScene("settings.fxml");
@@ -31,71 +35,77 @@ public class MenuController {
 
     @FXML
     protected void humanVShuman() {
-        SceneManager.getInstance().changeScene("matriceDuJeu.fxml");
+        PlayController.setAi(false);
+        SceneManager.getInstance().changeScene("jeu.fxml");
     }
 
     @FXML
     protected void humanVSai() {
-        SceneManager.getInstance().changeScene("playIA.fxml");
+        if (easy.isSelected() || medium.isSelected() || hard.isSelected()) {
+            if (canStart){
+                PlayController.setAi(true);
+                SceneManager.getInstance().changeScene("jeu.fxml");
+            }
+            else {
+                pane.getChildren().clear();
+                Label label = new Label("You have to train the model before playing");
+                label.setStyle("-fx-text-fill: #ff0000;");
+                pane.getChildren().add(label);
+                easy.setSelected(false);
+                medium.setSelected(false);
+                hard.setSelected(false);
+            }
+        } else {
+            pane.getChildren().clear();
+            Label label = new Label("Please select a difficulty");
+            label.setStyle("-fx-text-fill: #ff0000;");
+            pane.getChildren().add(label);
+        }
     }
 
     @FXML
     protected void easyCheck() {
-        medium.setSelected(false);
-        hard.setSelected(false);
-        trainORplay("F");
+        if (easy.isSelected()) {
+            medium.setSelected(false);
+            hard.setSelected(false);
+            trainORplay("F");
+        } else
+            pane.getChildren().clear();
     }
 
     @FXML
     protected void mediumCheck() {
-        easy.setSelected(false);
-        hard.setSelected(false);
-        trainORplay("M");
+        if (medium.isSelected()) {
+            easy.setSelected(false);
+            hard.setSelected(false);
+            trainORplay("M");
+        } else
+            pane.getChildren().clear();
     }
 
     @FXML
     protected void hardCheck() {
-        easy.setSelected(false);
-        medium.setSelected(false);
-        trainORplay("D");
-    }
-
-    private String getModelSrl(String difficulty) {
-        try {
-            File file = new File("./resources/config.txt");
-            // Créer l'objet File Reader
-            FileReader fr = null;
-            fr = new FileReader(file);
-            // Créer l'objet BufferedReader
-            BufferedReader br = new BufferedReader(fr);
-            StringBuffer sb = new StringBuffer();
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] configLu;
-                configLu = line.split(":");
-                if (configLu[0].equals(difficulty)) {
-                    return "model_"+configLu[3]+"_"+configLu[1]+"_"+configLu[2]+".srl";
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        if (hard.isSelected()) {
+            easy.setSelected(false);
+            medium.setSelected(false);
+            trainORplay("D");
+        } else
+            pane.getChildren().clear();
     }
 
     private void trainORplay(String difficulty) {
-        String modelFile = getModelSrl(difficulty);
+        String modelFile = FilesManager.getModelSrl(difficulty);
         List<String> models = FilesManager.getFilesInDirectory("./resources/models/");
         pane.getChildren().clear();
-        TrainerController.setDifficulty(difficulty);
         if (models.contains(modelFile)) { // if the model exists
+            canStart = true;
             Label label = new Label("Ready to play!");
-            //change color of the text
             label.setStyle("-fx-text-fill: #0000ff;");
             pane.getChildren().add(label);
+            this.model = modelFile;
         } else { // if the model doesn't exist
-            Button button = new Button("Train");
+            canStart = false;
+            Button button = new Button("Train the AI");
             button.setOnAction(event -> {
                 SceneManager.getInstance().changeScene("train.fxml");
             });

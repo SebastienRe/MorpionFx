@@ -50,7 +50,6 @@ public class ModelsController {
                 taille = grille.getChildren().size(); // on met à jour la taille de la grille
             }
         }
-        SceneManager.getInstance().changeScene("menu.fxml");
     }
 
     @FXML

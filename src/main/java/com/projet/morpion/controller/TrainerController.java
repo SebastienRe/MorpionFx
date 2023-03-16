@@ -25,9 +25,6 @@ public class TrainerController {
 
     private static String difficulty = "F";
 
-    public static void setDifficulty(String difficulty) {
-        TrainerController.difficulty = difficulty;
-    }
     @FXML
     protected void onClick() {
 

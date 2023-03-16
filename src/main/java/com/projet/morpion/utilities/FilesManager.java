@@ -1,6 +1,9 @@
 package com.projet.morpion.utilities;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,5 +28,26 @@ public class FilesManager {
         if (file.exists()) {
             file.delete();
         }
+    }
+
+    public static String getModelSrl(String difficulty) {
+        try {
+            File file = new File("./resources/config.txt");
+            FileReader fr = null;
+            fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            StringBuffer sb = new StringBuffer();
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] configLu;
+                configLu = line.split(":");
+                if (configLu[0].equals(difficulty)) {
+                    return "model_"+configLu[3]+"_"+configLu[1]+"_"+configLu[2]+".srl";
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
