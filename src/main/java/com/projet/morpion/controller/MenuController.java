@@ -34,7 +34,7 @@ public class MenuController {
 
     @FXML
     protected void humanVShuman() {
-        PlayController.setAi(false);
+        PlayController.setIsAi(false);
         SceneManager.getInstance().changeScene("jeu.fxml");
     }
 
@@ -42,7 +42,7 @@ public class MenuController {
     protected void humanVSai() {
         if (easy.isSelected() || medium.isSelected() || hard.isSelected()) {
             if (canStart){
-                PlayController.setAi(true);
+                PlayController.setIsAi(true);
                 SceneManager.getInstance().changeScene("jeu.fxml");
             }
             else {
@@ -95,14 +95,16 @@ public class MenuController {
     private void trainORplay(String difficulty) {
         String modelFile = FilesManager.getModelSrl(difficulty);
         List<String> models = FilesManager.getFilesInDirectory("./resources/models/");
+        System.out.println(modelFile);
         pane.getChildren().clear();
         if (models.contains(modelFile)) { // if the model exists
             canStart = true;
             Label label = new Label("Ready to play!");
             label.setStyle("-fx-text-fill: #0000ff;");
             pane.getChildren().add(label);
-            this.model = modelFile;
+            PlayController.setModel("./resources/models/"+modelFile);
         } else { // if the model doesn't exist
+            TrainerController.setDifficulty(difficulty);
             canStart = false;
             Button button = new Button("Train the AI");
             button.setOnAction(event -> {

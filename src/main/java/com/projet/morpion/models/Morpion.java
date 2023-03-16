@@ -132,4 +132,8 @@ public class Morpion{
     public int getIdWinner() {
         return idWinner;
     }
+
+    public double[] getMatriceDuJeu() {
+        return matriceDuJeu;
+    }
 }
