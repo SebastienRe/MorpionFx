@@ -1,7 +1,7 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.models.SceneManager;
-import com.projet.morpion.models.FilesManager;
+import com.projet.morpion.utilities.SceneManager;
+import com.projet.morpion.utilities.FilesManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;

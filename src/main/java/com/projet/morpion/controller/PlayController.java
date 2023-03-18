@@ -2,7 +2,7 @@ package com.projet.morpion.controller;
 
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.models.Morpion;
-import com.projet.morpion.models.SceneManager;
+import com.projet.morpion.utilities.SceneManager;
 import javafx.concurrent.Task;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -173,12 +173,14 @@ public class PlayController {
                         i = j;
                 }
 
+
                 System.out.println("AI play " + i);
                 if (morpion.getMatriceDuJeu()[i] == 0){
                     play(i);
                     break;
                 }
                 res[i] = -1;
+
             }
             enableORdisableAllButton(false);
         });

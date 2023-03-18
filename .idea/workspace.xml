@@ -10,13 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cd4147a-af85-4ee9-9915-ee59bee193c8" name="Changes" comment="ajout sauvegarde srl, rename controller">
+      <change afterPath="$PROJECT_DIR$/resources/models/model_1_2356_3.0.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/models/model_1_64_0.1.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/models/model_2_2356_3.0.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/models/model_2_512_0.01.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/models/model_6_1024_0.001.srl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/ModelsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/ModelsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/PlayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/SettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/TrainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/controller/TrainerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/models/Morpion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/models/Morpion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/jeu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/projet/morpion/jeu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/models/FilesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/FilesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projet/morpion/models/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projet/morpion/utilities/SceneManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +140,9 @@
       <workItem from="1678995381724" duration="500000" />
       <workItem from="1678995918639" duration="134000" />
       <workItem from="1678996084204" duration="7547000" />
+      <workItem from="1679046330682" duration="1439000" />
+      <workItem from="1679060611167" duration="6634000" />
+      <workItem from="1679144683476" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="apprentissage IA">
       <created>1678349067673</created>
