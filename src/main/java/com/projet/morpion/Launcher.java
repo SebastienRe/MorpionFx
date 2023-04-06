@@ -13,7 +13,7 @@ public class Launcher extends Application {
     public void start(Stage stage) throws IOException {
         mainStage = stage;
         SceneManager.getInstance().changeScene("menu.fxml");
-        stage.setTitle("JavaFX-Morpion");
+        stage.setTitle("Tic-Tac-Toe");
         stage.show();
     }
 

@@ -77,3 +77,10 @@
 .checkbox:selected {
     -fx-background-color: #B4D4F2;
 }
+
+.popup .content {
+    -fx-background-color: #FFFFFF; /* blanc */
+    -fx-padding: 10px;
+    -fx-font-size: 15px;
+    -fx-alignment: center;
+}

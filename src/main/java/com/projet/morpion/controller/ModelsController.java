@@ -32,6 +32,12 @@ public class ModelsController {
 
     @FXML
     protected void deleteButtonPressed () {
+        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment supprimer ces fichers ?", "choix") == "oui" ){
+            deleteSelectedModels();
+        }
+    }
+
+    private void deleteSelectedModels() {
         //pour chaque ligne de la grille
         int taille = grille.getChildren().size();
         for (int i = 1; i < taille; i = i+2) {

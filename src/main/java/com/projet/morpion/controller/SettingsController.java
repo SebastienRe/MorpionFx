@@ -58,7 +58,10 @@ public void initialize() throws IOException {
                 .append(":").append(tab[2]).append(System.lineSeparator());
         writer.write(sb.toString());
         writer.close();
-        SceneManager.getInstance().changeScene("menu.fxml");
+
+        if ( SceneManager.getInstance().displaySceneAndWait("Les données ont été sauvegardées avec succès.", "save" ) == "ok" ) {
+            SceneManager.getInstance().changeScene("menu.fxml");
+        }
     }
     public List<String []> getNewConfig() throws IOException {
         int gridLimit = 0;
