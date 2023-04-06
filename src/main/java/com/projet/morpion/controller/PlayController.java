@@ -165,26 +165,17 @@ public class PlayController {
             transition3.play();
             matriceDuJeu.add(stackPane, 0, 0);
             //afficher une image à la fin des transitions
-            transition3.setOnFinished(e -> {
-                //position l image au centre
-
-                stackPane.getChildren().clear();
-                imageWin.setFitWidth(120);
-                imageWin.setFitHeight(120);
-                imageWin.setLayoutX(165);
-                imageWin.setLayoutY(119);
-                anchor.getChildren().add(imageWin);
-                affichageHaut.setLayoutX(50);
+            transition3.setOnFinished(e->{
                 affichageHaut.setLayoutY(50);
+                affichageHaut.setLayoutY(70);
                 if(morpion.getIdWinner() == 1) {
                     if (isVSai) {
-                        affichageHaut.setText("AI win");
+                        affichageHaut.setText("Winner");
                     } else {
-                        affichageHaut.setText("Player O win");
+                        affichageHaut.setText("Winner");
                     }
                 }else if (morpion.getIdWinner() == -1)
-                    affichageHaut.setText("Player X win");
-                matriceDuJeu.setVisible(false);
+                    affichageHaut.setText("Winner");
             });
 
 
