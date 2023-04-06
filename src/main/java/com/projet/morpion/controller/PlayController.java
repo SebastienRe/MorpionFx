@@ -26,6 +26,7 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
@@ -155,8 +156,10 @@ public class PlayController {
 
         if ( isGrilleRemplis || isWin) { // si partie fini
             System.out.println("fini");
-            if (isGrilleRemplis && !isWin)
+            if (isGrilleRemplis && !isWin) {
+                animationMatchNull();
                 affichageHaut.setText("end game, no winner");
+            }
             else if (morpion.getIdWinner() == -1)
                 affichageHaut.setText("Player 1 win");
             else if (morpion.getIdWinner() == 1)
@@ -308,7 +311,40 @@ public class PlayController {
             }
         }
     }
-    //fonction qui prend un tableau de boutton et une image
+   //animation si match nulle
+    public void animationMatchNull()
+    {
+        double xDestination = matriceDuJeu.getWidth() /2 - 50;
+        double yDestination = matriceDuJeu.getHeight() /2  - 50;
+        StackPane stackPane = null;
+        List<Button> listButton = new ArrayList<>();
+        //ajouter tout les boutton au stack pane
+        for (Node node : matriceDuJeu.getChildren()) {
+                Button button = (Button) node;
+                listButton.add(button);
+        }
+        stackPane = new StackPane(listButton.toArray(new Button[listButton.size()]));
+        //animation tout les boutton faire le centre
+        for (Node node : stackPane.getChildren()) {
+            if (node instanceof Button) {
+                Button button = (Button) node;
+                ImageView img = (ImageView) button.getGraphic();
+                String type = img.getImage().getUrl().substring(34);
+                if(type.equals("cross2.png"))
+                {
+                    TranslateTransition transition = createTransition(button, xDestination-50, yDestination);
+                    transition.play();
+                }
+                else
+                {
+                    TranslateTransition transition = createTransition(button, xDestination +60, yDestination);
+                    transition.play();
+                }
+            }
+        }
+        //ajouter stack pane au matrice du jeu
+        matriceDuJeu.getChildren().add(stackPane);
+    }
 
 }
 
