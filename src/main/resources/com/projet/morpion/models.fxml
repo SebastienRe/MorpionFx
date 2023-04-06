@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../../../css/style.css" prefHeight="400.0" prefWidth="452.0" spacing="8.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.ModelsController">
+<VBox prefHeight="400.0" prefWidth="452.0" spacing="8.0" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.ModelsController">
    <children>
       <ScrollPane prefHeight="356.0" prefWidth="452.0">
          <content>
@@ -31,7 +31,7 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button layoutX="266.0" layoutY="-5.0" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="37.0" prefWidth="85.0" styleClass="button2" stylesheets="@../../../css/style.css" text="Delete">
+            <Button fx:id="deleteButton" layoutX="266.0" layoutY="-5.0" mnemonicParsing="false" onAction="#deleteButtonPressed" prefHeight="37.0" prefWidth="85.0" styleClass="button2" stylesheets="@../../../css/style.css" text="Delete">
                <font>
                   <Font size="18.0" />
                </font></Button>

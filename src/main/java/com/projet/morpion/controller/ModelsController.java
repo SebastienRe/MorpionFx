@@ -3,6 +3,7 @@ package com.projet.morpion.controller;
 import com.projet.morpion.utilities.SceneManager;
 import com.projet.morpion.utilities.FilesManager;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -13,14 +14,30 @@ import java.util.List;
 public class ModelsController {
     @FXML
     GridPane grille;
+    @FXML
+    Button deleteButton;
 
     @FXML
     public void initialize() {
+        deleteButton.setDisable(true);
         List<String> files = FilesManager.getFilesInDirectory("./resources/models/");
         for (String file : files) {
             Label label = new Label("  " + file);
             label.setStyle("-fx-font-size: 20px;");
             CheckBox checkBox = new CheckBox();
+            checkBox.setOnAction(event -> {
+                if (checkBox.isSelected()) {
+                    deleteButton.setDisable(false);
+                } else {
+                    boolean disable = true;
+                    for (int i = 1; i < grille.getChildren().size(); i = i+2) {
+                        if (((CheckBox) grille.getChildren().get(i)).isSelected()) {
+                            disable = false;
+                        }
+                    }
+                    deleteButton.setDisable(disable);
+                }
+            });
             checkBox.setStyle("-fx-font-size: 20px;");
 
             grille.addRow(grille.getRowCount(), label, checkBox);
@@ -29,8 +46,9 @@ public class ModelsController {
 
     @FXML
     protected void deleteButtonPressed () {
-        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment supprimer ces fichiers ?", "choix") == "oui" ){
+        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment\nsupprimer ces fichiers ?", "choix") == "oui" ){
             deleteSelectedModels();
+            deleteButton.setDisable(true);
         }
     }
 
