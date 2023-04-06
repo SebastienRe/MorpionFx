@@ -23,20 +23,20 @@
       </MenuBar>
       <AnchorPane prefHeight="400.0" prefWidth="452.0">
          <children>
-            <Button alignment="TOP_CENTER" layoutX="65.0" layoutY="57.0" mnemonicParsing="false" onAction="#humanVShuman" prefHeight="71.0" prefWidth="317.0" styleClass="btn" stylesheets="@../../../css/style.css" text="H   vs.   H">
+            <Button alignment="TOP_CENTER" layoutX="68.0" layoutY="104.0" mnemonicParsing="false" onAction="#humanVShuman" prefHeight="71.0" prefWidth="317.0" stylesheets="@../../../css/style.css" text="H   vs.   H">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button alignment="TOP_CENTER" layoutX="65.0" layoutY="159.0" mnemonicParsing="false" onAction="#humanVSai" prefHeight="107.0" prefWidth="317.0" styleClass="btn" stylesheets="@../../../css/style.css" text="H   vs.   AI">
+            <Button alignment="TOP_CENTER" layoutX="68.0" layoutY="197.0" mnemonicParsing="false" onAction="#humanVSai" prefHeight="107.0" prefWidth="317.0" stylesheets="@../../../css/style.css" text="H   vs.   AI">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <CheckBox fx:id="easy" layoutX="94.0" layoutY="213.0" mnemonicParsing="false" onAction="#easyCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Easy" />
-            <CheckBox fx:id="medium" layoutX="180.0" layoutY="213.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
-            <CheckBox fx:id="hard" layoutX="279.0" layoutY="213.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
-            <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="114.0" layoutY="274.0" prefHeight="46.0" prefWidth="219.0" stylesheets="@../../../css/style.css" />
+            <CheckBox fx:id="easy" layoutX="99.0" layoutY="252.0" mnemonicParsing="false" onAction="#easyCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Easy" />
+            <CheckBox fx:id="medium" layoutX="181.0" layoutY="252.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
+            <CheckBox fx:id="hard" layoutX="277.0" layoutY="252.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
+            <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="84.0" layoutY="318.0" prefHeight="37.0" prefWidth="284.0" stylesheets="@../../../css/style.css" />
          </children></AnchorPane>
    </children>
 </VBox>

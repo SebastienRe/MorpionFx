@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="406.0" prefWidth="452.0" spacing="20.0">
          <children>
-             <Button fx:id="start" onAction="#onClick" text="Start">
+             <Button fx:id="start" onAction="#onClick" styleClass="button2" stylesheets="@../../../css/style.css" text="Start">
                <font>
                   <Font size="18.0" />
                </font>
@@ -21,7 +21,7 @@
                </font>
             </TextField>
             <ProgressBar fx:id="progress" minHeight="-Infinity" prefHeight="40.0" prefWidth="303.0" progress="0.0" />
-            <Button mnemonicParsing="false" onAction="#retourMenu" text="Back">
+            <Button mnemonicParsing="false" onAction="#retourMenu" styleClass="button2" stylesheets="@../../../css/style.css" text="Back">
                <font>
                   <Font size="18.0" />
                </font>

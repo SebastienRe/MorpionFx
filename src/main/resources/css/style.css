@@ -1,9 +1,11 @@
 .button {
     -fx-background-color: #B4D4F2;
     -fx-background-radius: 20px;
-    -fx-border-color: #A2BCCF;
+    -fx-border-color: transparent transparent #A2BCCF transparent;
     -fx-border-radius: 20px;
-    -fx-border-width: 4px;
+    -fx-border-style: solid;
+    -fx-border-width: 0px 0px 6px 0px;
+    -fx-border-insets: 0px 0px -6px 0px;
     -fx-font-family: "Helvetica";
     -fx-font-size: 24px;
     -fx-font-weight: bold;
@@ -14,13 +16,13 @@
 }
 
 .button:hover {
-
-    -fx-border-width: 6px;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-border-insets: 0px 0px -3px 0px;
+    -fx-border-color: #A2BCCF;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 25, 0, 0, 6);
 }
 
 .button:pressed {
-    -fx-background-color: #A2BCCF;
     -fx-effect:
             dropshadow(gaussian, rgba(255,255,255,0.6), 20, 0, 0, 7),
             dropshadow(gaussian, #00FFFF, 0, 0, 0, 3),
@@ -28,6 +30,42 @@
             dropshadow(gaussian, rgba(0,0,0,0.3), 0, 12, 0, 7);
     -fx-translate-y: 3px;
 }
+
+
+.button2 {
+    -fx-background-color: #B4D4F2;
+    -fx-background-radius: 10px;
+    -fx-border-color: transparent transparent #A2BCCF transparent;
+    -fx-border-radius: 10px;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-border-insets: 0px 0px -3px 0px;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #336699;
+    -fx-padding: 10px 20px;
+    -fx-transition: transform 0.2s ease-out;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 20, 0, 0, 5);
+}
+
+.button2:hover {
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-insets: 0px 0px -2px 0px;
+    -fx-border-color: #A2BCCF;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 25, 0, 0, 6);
+}
+
+.button2:pressed {
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.6), 20, 0, 0, 7),
+            dropshadow(gaussian, #00FFFF, 0, 0, 0, 3),
+            dropshadow(gaussian, rgba(0,0,0,0.6), 20, 0, 0, -7),
+            dropshadow(gaussian, rgba(0,0,0,0.3), 0, 12, 0, 7);
+    -fx-translate-y: 2px;
+}
+
+
+
 .checkbox {
     -fx-font-family: "Helvetica";
     -fx-font-size: 12px;
