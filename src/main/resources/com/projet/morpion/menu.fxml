@@ -20,6 +20,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#modelButtonPressed" text="Model" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" onAction="#credit" text="Credit" />
         </menus>
       </MenuBar>
       <AnchorPane prefHeight="400.0" prefWidth="452.0">

@@ -49,6 +49,11 @@ public class MenuController {
     }
 
     @FXML
+    protected void credit(){
+        SceneManager.getInstance().displaySceneAndWait("Crédits", "ok");
+    }
+
+    @FXML
     protected void onClickSettings() throws IOException {
         SceneManager.getInstance().changeScene("settings.fxml");
     }
