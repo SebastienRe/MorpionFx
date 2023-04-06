@@ -2,6 +2,7 @@ package com.projet.morpion;
 
 import com.projet.morpion.utilities.SceneManager;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class Launcher extends Application {
         mainStage = stage;
         SceneManager.getInstance().changeScene("menu.fxml");
         stage.setTitle("Tic-Tac-Toe");
+        stage.getIcons().add(new Image("file:./resources/images/TicTacToe/logo.png"));
         stage.show();
     }
 
