@@ -4,10 +4,7 @@ import com.projet.morpion.Launcher;
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.models.Morpion;
 import com.projet.morpion.utilities.SceneManager;
-import javafx.animation.FadeTransition;
-import javafx.animation.ParallelTransition;
-import javafx.animation.SequentialTransition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.concurrent.Task;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -22,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -50,6 +48,7 @@ public class PlayController {
     private static String model = "";
     private Morpion morpion = new Morpion();
     private MultiLayerPerceptron instanceOfAI = null;
+    Timeline timeline;
     @FXML
     VBox howStartChoicePannel;
     @FXML
@@ -70,16 +69,35 @@ public class PlayController {
             SceneManager.getInstance().changeScene("jeu.fxml");
         });
 
-        affichageHaut.setFont(new Font("Arial", 20));
         if (isVSai) {
-            affichageHaut.setText("Player 1 VS AI");
+            affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
+            affichageHaut.setText("AI turn");
+            timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
+                    new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
+                    new KeyFrame(Duration.seconds(2), new KeyValue(affichageHaut.scaleXProperty(), 1.0))
+            );
+            timeline.setAutoReverse(true);
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
             enableORdisableAllButton(true);
             instanceOfAI = MultiLayerPerceptron.load(model);
             howStartChoicePannel.setVisible(true);
         }
-        else
-            affichageHaut.setText("Player 1 VS Player 2");
-        affichageHaut.setVisible(true);
+        else {
+            affichageHaut.setVisible(true);
+            affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
+            affichageHaut.setText("Player X turn");
+            timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
+                    new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
+                    new KeyFrame(Duration.seconds(2), new KeyValue(affichageHaut.scaleXProperty(), 1.0))
+            );
+            timeline.setAutoReverse(true);
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+        }
+
     }
 
     public static void setIsAi(boolean isVSai) {
@@ -97,9 +115,11 @@ public class PlayController {
         ImageView imgPlay = createImgPlay();
         positionJoue.setGraphic(imgPlay); // création de l'image et ajout dans le bouton
         if (isPlayerOneTurn) {
+            affichageHaut.setText("Player O turn");
             morpion.afterPlayerOneMove(idCaseJouee);
             isPlayerOneTurn = false; // On change de joueur
         } else {
+            affichageHaut.setText("Player X turn");
             morpion.afterPlayerTwoMove(idCaseJouee);
             isPlayerOneTurn = true; // On change de joueur
         }
@@ -148,6 +168,16 @@ public class PlayController {
                 imageWin.setLayoutX(165);
                 imageWin.setLayoutY(119);
                 anchor.getChildren().add(imageWin);
+                affichageHaut.setLayoutX(50);
+                affichageHaut.setLayoutY(50);
+                if(morpion.getIdWinner() == 1) {
+                    if (isVSai) {
+                        affichageHaut.setText("AI win");
+                    } else {
+                        affichageHaut.setText("Player O win");
+                    }
+                }else
+                    affichageHaut.setText("Player X win");
             });
 
 
@@ -158,15 +188,15 @@ public class PlayController {
             System.out.println("fini");
             if (isGrilleRemplis && !isWin) {
                 animationMatchNull();
-                affichageHaut.setText("end game, no winner");
+                affichageHaut.setText("");
             }
             else if (morpion.getIdWinner() == -1)
-                affichageHaut.setText("Player 1 win");
+                affichageHaut.setText("");
             else if (morpion.getIdWinner() == 1)
                 if (isVSai)
-                    affichageHaut.setText("AI win");
+                    affichageHaut.setText("");
                 else
-                    affichageHaut.setText("Player 2 win");
+                    affichageHaut.setText("");
             else
                 throw new IllegalStateException("Unexpected value: " + morpion.getIdWinner());
             affichageHaut.setVisible(true);
