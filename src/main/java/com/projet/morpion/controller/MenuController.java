@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.*;
 import java.util.List;
@@ -19,10 +20,15 @@ public class MenuController {
     @FXML
     CheckBox hard;
     @FXML
-    Pane pane;
+    VBox vbox_affichage;
     String model = "";
 
     boolean canStart = false;
+
+    @FXML
+    public void initialize() {
+    }
+
     @FXML
     protected void onClickSettings() throws IOException {
         SceneManager.getInstance().changeScene("settings.fxml");
@@ -46,19 +52,19 @@ public class MenuController {
                 SceneManager.getInstance().changeScene("jeu.fxml");
             }
             else {
-                pane.getChildren().clear();
+                vbox_affichage.getChildren().clear();
                 Label label = new Label("You have to train the model before playing");
                 label.setStyle("-fx-text-fill: #ff0000;");
-                pane.getChildren().add(label);
+                vbox_affichage.getChildren().add(label);
                 easy.setSelected(false);
                 medium.setSelected(false);
                 hard.setSelected(false);
             }
         } else {
-            pane.getChildren().clear();
+            vbox_affichage.getChildren().clear();
             Label label = new Label("Please select a difficulty");
             label.setStyle("-fx-text-fill: #ff0000;");
-            pane.getChildren().add(label);
+            vbox_affichage.getChildren().add(label);
         }
     }
 
@@ -69,7 +75,7 @@ public class MenuController {
             hard.setSelected(false);
             trainORplay("F");
         } else
-            pane.getChildren().clear();
+            vbox_affichage.getChildren().clear();
     }
 
     @FXML
@@ -79,7 +85,7 @@ public class MenuController {
             hard.setSelected(false);
             trainORplay("M");
         } else
-            pane.getChildren().clear();
+            vbox_affichage.getChildren().clear();
     }
 
     @FXML
@@ -89,19 +95,19 @@ public class MenuController {
             medium.setSelected(false);
             trainORplay("D");
         } else
-            pane.getChildren().clear();
+            vbox_affichage.getChildren().clear();
     }
 
     private void trainORplay(String difficulty) {
         String modelFile = FilesManager.getModelSrl(difficulty);
         List<String> models = FilesManager.getFilesInDirectory("./resources/models/");
         System.out.println(modelFile);
-        pane.getChildren().clear();
+        vbox_affichage.getChildren().clear();
         if (models.contains(modelFile)) { // if the model exists
             canStart = true;
-            Label label = new Label("Ready to play!");
+            Label label = new Label("Ready to play !");
             label.setStyle("-fx-text-fill: #0000ff;");
-            pane.getChildren().add(label);
+            vbox_affichage.getChildren().add(label);
             PlayController.setModel("./resources/models/"+modelFile);
         } else { // if the model doesn't exist
             TrainerController.setDifficulty(difficulty);
@@ -110,7 +116,7 @@ public class MenuController {
             button.setOnAction(event -> {
                 SceneManager.getInstance().changeScene("train.fxml");
             });
-            pane.getChildren().add(button);
+            vbox_affichage.getChildren().add(button);
         }
     }
 }

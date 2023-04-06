@@ -2,11 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -37,7 +37,7 @@
             <CheckBox fx:id="easy" layoutX="112.0" layoutY="270.0" mnemonicParsing="false" onAction="#easyCheck" text="Easy" />
             <CheckBox fx:id="medium" layoutX="192.0" layoutY="270.0" mnemonicParsing="false" onAction="#mediumCheck" text="Medium" />
             <CheckBox fx:id="hard" layoutX="290.0" layoutY="270.0" mnemonicParsing="false" onAction="#hardCheck" text="Hard" />
-            <Pane fx:id="pane" layoutX="166.0" layoutY="308.0" prefHeight="39.0" prefWidth="124.0" />
+            <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="119.0" layoutY="297.0" prefHeight="46.0" prefWidth="219.0" />
          </children></AnchorPane>
    </children>
 </VBox>
