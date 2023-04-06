@@ -1,0 +1,24 @@
+.buttonJeu {
+    -fx-background-color: #F2F2F2;
+    -fx-background-radius: 15px;
+
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666666;
+    -fx-padding: 15px 35px;
+    -fx-transition: transform 0.2s ease-out;
+    -fx-effect: dropshadow(gaussian, #B4D4F2, 20, 0, 0, 5);
+}
+
+.buttonJeu:hover {
+    -fx-border-color: #B4D4F2;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+    -fx-transform: translateY(-10px) scale(1.1);
+    -fx-effect: dropshadow(gaussian, #B4D4F2, 25, 0, 0, 6);
+}
+
+.buttonJeu:pressed {
+    -fx-background-color: #CCCCCC;
+}
