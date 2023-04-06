@@ -103,6 +103,11 @@ public class PlayController {
 
     }
 
+    @FXML
+    protected void help() {
+        SceneManager.getInstance().displaySceneAndWait("Le jeu de morpion est un jeu à deux joueurs.\nl'objectif est d'aligner trois symboles identiques, le joueur qui réussit à aligner\ntrois symboles gagne la partie.", "ok");
+    }
+
     public static void setIsAi(boolean isVSai) {
         PlayController.isVSai = isVSai;
     }

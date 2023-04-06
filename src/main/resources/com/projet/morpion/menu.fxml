@@ -3,27 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.MenuController">
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.MenuController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="70.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="IA">
-            <items>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+         <items>
+            <MenuButton mnemonicParsing="false" styleClass="label" stylesheets="@../../../css/style.css" text="IA" textFill="#336699">
+              <items>
               <MenuItem mnemonicParsing="false" onAction="#onClickSettings" text="Settings" />
                 <MenuItem mnemonicParsing="false" onAction="#modelButtonPressed" text="Model" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" onAction="#credit" text="Credit" />
-        </menus>
-      </MenuBar>
-      <AnchorPane prefHeight="400.0" prefWidth="452.0">
+              </items>
+            </MenuButton>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#credit" prefHeight="25.0" prefWidth="64.0" styleClass="button3" text="Credits" textFill="#336699">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </items>
+      </ToolBar>
+      <AnchorPane prefHeight="400.0" prefWidth="452.0" stylesheets="@../../../css/style.css">
          <children>
             <Button alignment="TOP_CENTER" layoutX="64.0" layoutY="86.0" mnemonicParsing="false" onAction="#humanVShuman" prefHeight="71.0" prefWidth="317.0" styleClass="btn" stylesheets="@../../../css/style.css" text="H   vs.   H">
                <font>
@@ -39,7 +43,10 @@
             <CheckBox fx:id="medium" layoutX="161.0" layoutY="259.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
             <CheckBox fx:id="hard" layoutX="280.0" layoutY="259.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
             <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="116.0" layoutY="315.0" prefHeight="46.0" prefWidth="219.0" stylesheets="@../../../css/style.css" />
-            <Label fx:id="titre" alignment="CENTER" layoutX="79.0" layoutY="5.0" prefHeight="17.0" prefWidth="285.0" styleClass="label-title" stylesheets="@../../../css/style.css" text="Label" />
+            <Label fx:id="titre" alignment="CENTER" layoutX="79.0" layoutY="5.0" prefHeight="17.0" prefWidth="285.0" styleClass="label-title" stylesheets="@../../../css/style.css" text="Tic Tac Toe">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font></Label>
          </children></AnchorPane>
    </children>
 </VBox>

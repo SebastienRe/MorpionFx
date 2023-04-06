@@ -44,12 +44,12 @@ public class PopupController {
                 stage.close();
             });
 
-        } else if (choix.equals("save")) {
-            Button ok = new Button("OK");
+        } else if (choix.equals("ok")) {
+            Button ok = new Button("Ok");
             ok.getStyleClass().add("button2");
-            hBoxButtons.getChildren().addAll(ok);
+            hBoxButtons.getChildren().add(ok);
 
-            //si le bouton non est cliqué answer = non et stage.close
+            //si le bouton ok est cliqué answer = ok et stage.close
             ok.setOnAction(event -> {
                 answer = "ok";
                 stage.close();
