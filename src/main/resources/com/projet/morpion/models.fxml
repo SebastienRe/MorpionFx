@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="452.0" spacing="8.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.ModelsController">
+<VBox stylesheets="@../../../css/style.css" prefHeight="400.0" prefWidth="452.0" spacing="8.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.ModelsController">
    <children>
       <ScrollPane prefHeight="356.0" prefWidth="452.0">
          <content>

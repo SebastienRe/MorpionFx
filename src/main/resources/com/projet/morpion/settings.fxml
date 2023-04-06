@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.SettingsController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="452.0" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.SettingsController">
    <children>
       <AnchorPane prefHeight="420.0" prefWidth="452.0">
          <children>
@@ -70,12 +70,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="202.0" text="Medium">
+            <Label layoutX="6.0" layoutY="202.0" text="Medium">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="289.0" text="Difficult">
+            <Label layoutX="7.0" layoutY="289.0" text="Difficult">
                <font>
                   <Font size="18.0" />
                </font>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.TrainerController">
+<VBox stylesheets="@../../../css/style.css" alignment="CENTER" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.TrainerController">
    <children>
       <VBox alignment="CENTER" prefHeight="406.0" prefWidth="452.0" spacing="20.0">
          <children>

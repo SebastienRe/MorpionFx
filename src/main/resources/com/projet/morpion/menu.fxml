@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.MenuController">
+<VBox stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projet.morpion.controller.MenuController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="70.0">
         <menus>
@@ -34,9 +34,9 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <CheckBox fx:id="easy" layoutX="98.0" layoutY="259.0" mnemonicParsing="false" onAction="#easyCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Easy" />
-            <CheckBox fx:id="medium" layoutX="179.0" layoutY="259.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
-            <CheckBox fx:id="hard" layoutX="278.0" layoutY="259.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
+            <CheckBox fx:id="easy" layoutX="79.0" layoutY="259.0" mnemonicParsing="false" onAction="#easyCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Easy" />
+            <CheckBox fx:id="medium" layoutX="161.0" layoutY="259.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
+            <CheckBox fx:id="hard" layoutX="280.0" layoutY="259.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
             <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="116.0" layoutY="315.0" prefHeight="46.0" prefWidth="219.0" stylesheets="@../../../css/style.css" />
             <Label fx:id="titre" alignment="CENTER" layoutX="79.0" layoutY="5.0" prefHeight="17.0" prefWidth="285.0" styleClass="label-title" stylesheets="@../../../css/style.css" text="Label" />
          </children></AnchorPane>

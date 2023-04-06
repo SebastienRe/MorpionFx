@@ -19,12 +19,9 @@ public class ModelsController {
         List<String> files = FilesManager.getFilesInDirectory("./resources/models/");
         for (String file : files) {
             Label label = new Label("  " + file);
-            label.setPrefWidth(300);
-            label.setPrefHeight(30);
-            label.setFont(new Font("Arial", 20));
+            label.setStyle("-fx-font-size: 20px;");
             CheckBox checkBox = new CheckBox();
-            checkBox.setPrefWidth(30);
-            checkBox.setPrefHeight(30);
+            checkBox.setStyle("-fx-font-size: 20px;");
 
             grille.addRow(grille.getRowCount(), label, checkBox);
         }

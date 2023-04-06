@@ -74,8 +74,15 @@
     -fx-border-width: 2px;
 }
 
-.checkbox:selected {
-    -fx-background-color: #B4D4F2;
+.checkbox {
+    -fx-font-size: 16px;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+}
+
+.checkbox .box {
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
 }
 
 .popup .content {
@@ -89,5 +96,10 @@
     -fx-font-weight: bold;
     -fx-text-fill: #336699;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #336699;
 }
 
