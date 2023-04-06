@@ -31,8 +31,12 @@ import static java.lang.Thread.sleep;
 
 public class PlayController {
     @FXML
+    AnchorPane anchor;
+    @FXML
+
     private Label affichageHaut;
     private ImageView img1, img2, img3;
+    private ImageView imageWin;
     @FXML
     private GridPane matriceDuJeu;
     private ArrayList<Node> listButton = new ArrayList<>();
@@ -119,8 +123,8 @@ public class PlayController {
             Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
             btn3.setGraphic(img3);
             // Ajouter les boutons à un conteneur StackPane
+            cacherAutreBouton(positionGagnante);
             StackPane stackPane = new StackPane(btn1, btn2, btn3);
-
             // Définir la position finale de la transition (le point de fusion)
             double xDestination = matriceDuJeu.getWidth() /2 - 50;
             double yDestination = matriceDuJeu.getHeight() /2  - 50;
@@ -133,6 +137,18 @@ public class PlayController {
             TranslateTransition transition3 = createTransition(btn3, xDestination, yDestination);
             transition3.play();
             matriceDuJeu.add(stackPane, 0, 0);
+            //afficher une image à la fin des transitions
+            transition3.setOnFinished(e -> {
+                //position l image au centre
+
+                stackPane.getChildren().clear();
+                imageWin.setFitWidth(120);
+                imageWin.setFitHeight(120);
+                imageWin.setLayoutX(165);
+                imageWin.setLayoutY(119);
+                anchor.getChildren().add(imageWin);
+            });
+
 
 
         }
@@ -239,10 +255,12 @@ public class PlayController {
             img1 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img2 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img3 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
+            imageWin = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
         } else if (result == 1) {
             img1 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img2 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img3 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
+            imageWin = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
 
         }
         img1.setFitWidth(30);
@@ -273,6 +291,25 @@ public class PlayController {
 
         return transition;
     }
+    private void cacherAutreBouton(int [] position) {
+        // Cacher les autres boutons
+        //for matriceDuJeu.getChildren()
+        for (Node node : matriceDuJeu.getChildren()) {
+            if (node instanceof Button) {
+                Button button = (Button) node;
+                int id = Integer.parseInt(String.valueOf(button.getId().charAt(6)));
+                if (id != position[0] && id != position[1] && id != position[2]) {
+                    //animation pour disparaitre les boutton doucement
+                    FadeTransition transition = new FadeTransition(Duration.seconds(1), button);
+                    transition.setFromValue(1);
+                    transition.setToValue(0);
+                    transition.play();
+                }
+            }
+        }
+    }
+    //fonction qui prend un tableau de boutton et une image
+
 }
 
 
