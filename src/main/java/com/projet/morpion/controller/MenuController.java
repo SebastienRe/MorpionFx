@@ -2,12 +2,18 @@ package com.projet.morpion.controller;
 
 import com.projet.morpion.utilities.SceneManager;
 import com.projet.morpion.utilities.FilesManager;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.util.Duration;
 
 import java.io.*;
 import java.util.List;
@@ -21,12 +27,25 @@ public class MenuController {
     CheckBox hard;
     @FXML
     VBox vbox_affichage;
+
+    @FXML
+            Label titre;
     String model = "";
 
     boolean canStart = false;
 
     @FXML
     public void initialize() {
+        titre.setText("Tic Tac Toe");
+        titre.setFont(Font.font("Helvetica", FontWeight.BOLD, 46));
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(titre.scaleXProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(1), new KeyValue(titre.scaleXProperty(), 1.2)),
+                new KeyFrame(Duration.seconds(2), new KeyValue(titre.scaleXProperty(), 1.0))
+        );
+        timeline.setAutoReverse(true);
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 
     @FXML

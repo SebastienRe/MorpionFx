@@ -25,14 +25,14 @@
         </rowConstraints>
          <children>
             <Button fx:id="button0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="103.0" />
-            <Button fx:id="button1" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="115.0" GridPane.columnIndex="1" />
-            <Button fx:id="button2" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="111.0" GridPane.columnIndex="2" />
-            <Button fx:id="button3" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="115.0" GridPane.rowIndex="1" />
-            <Button fx:id="button4" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="button5" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="button6" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="123.0" GridPane.rowIndex="2" />
-            <Button fx:id="button7" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="button8" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="button1" layoutX="1.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="115.0" GridPane.columnIndex="1" />
+            <Button fx:id="button2" layoutX="2.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="111.0" GridPane.columnIndex="2" />
+            <Button fx:id="button3" layoutY="1.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="115.0" GridPane.rowIndex="1" />
+            <Button fx:id="button4" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button5" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="button6" layoutY="2.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="123.0" GridPane.rowIndex="2" />
+            <Button fx:id="button7" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="button8" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#humanPlay" prefHeight="98.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Button fx:id="replay" layoutX="276.0" layoutY="352.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" styleClass="button2" stylesheets="@../../../css/style.css" text="Replay" visible="false">

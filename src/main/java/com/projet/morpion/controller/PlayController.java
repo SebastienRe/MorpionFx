@@ -1,18 +1,28 @@
 package com.projet.morpion.controller;
 
+import com.projet.morpion.Launcher;
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.models.Morpion;
 import com.projet.morpion.utilities.SceneManager;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.TranslateTransition;
 import javafx.concurrent.Task;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.*;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,6 +118,23 @@ public class PlayController {
 
             Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
             btn3.setGraphic(img3);
+            // Ajouter les boutons à un conteneur StackPane
+            StackPane stackPane = new StackPane(btn1, btn2, btn3);
+
+            // Définir la position finale de la transition (le point de fusion)
+            double xDestination = matriceDuJeu.getWidth() /2 - 50;
+            double yDestination = matriceDuJeu.getHeight() /2  - 50;
+
+            // Créer une transition d'animation pour chaque bouton
+            TranslateTransition transition1 = createTransition(btn1, xDestination, yDestination);
+            transition1.play();
+            TranslateTransition transition2 = createTransition(btn2, xDestination, yDestination);
+            transition2.play();
+            TranslateTransition transition3 = createTransition(btn3, xDestination, yDestination);
+            transition3.play();
+            matriceDuJeu.add(stackPane, 0, 0);
+
+
         }
 
         if ( isGrilleRemplis || isWin) { // si partie fini
@@ -235,6 +262,16 @@ public class PlayController {
         img.setFitWidth(30);
         img.setFitHeight(30);
         return img;
+    }
+    private TranslateTransition createTransition(Button button, double xDestination, double yDestination) {
+        // Créer une transition d'animation pour déplacer le bouton vers la position finale
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), button);
+        transition.setFromX(button.getLayoutX());
+        transition.setFromY(button.getLayoutY());
+        transition.setToX(xDestination);
+        transition.setToY(yDestination);
+
+        return transition;
     }
 }
 
