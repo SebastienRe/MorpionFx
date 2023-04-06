@@ -32,8 +32,9 @@ public class PlayController {
     @FXML
     AnchorPane anchor;
     @FXML
-
     private Label affichageHaut;
+    @FXML
+    private Button help;
     private ImageView img1, img2, img3;
     private ImageView imageWin;
     @FXML
@@ -142,6 +143,7 @@ public class PlayController {
         boolean isGrilleRemplis = morpion.isGrilleRempli();
 
         if (isWin) { // Si il y a un gagnant colore les cases gagnantes
+            help.setVisible(false);
             enableORdisableAllButton(false);
             int[] positionGagnante = morpion.getPositionWinner();
 

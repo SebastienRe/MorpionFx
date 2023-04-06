@@ -67,6 +67,6 @@
                 </HBox>
             </children>
         </VBox>
-      <Button layoutX="393.0" layoutY="14.0" mnemonicParsing="false" onAction="#help" prefHeight="37.0" prefWidth="45.0" styleClass="button2" stylesheets="@../../../css/style.css" text="?" />
+      <Button fx:id="help" layoutX="393.0" layoutY="14.0" mnemonicParsing="false" onAction="#help" prefHeight="37.0" prefWidth="45.0" styleClass="button2" stylesheets="@../../../css/style.css" text="?" />
     </children>
 </AnchorPane>
