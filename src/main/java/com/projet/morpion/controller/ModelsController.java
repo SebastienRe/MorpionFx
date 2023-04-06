@@ -29,7 +29,7 @@ public class ModelsController {
 
     @FXML
     protected void deleteButtonPressed () {
-        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment supprimer ces fichers ?", "choix") == "oui" ){
+        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment supprimer ces fichiers ?", "choix") == "oui" ){
             deleteSelectedModels();
         }
     }

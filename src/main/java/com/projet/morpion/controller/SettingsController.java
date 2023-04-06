@@ -59,7 +59,7 @@ public void initialize() throws IOException {
         writer.write(sb.toString());
         writer.close();
 
-        if ( SceneManager.getInstance().displaySceneAndWait("Les données ont été sauvegardées avec succès.", "save" ) == "ok" ) {
+        if ( SceneManager.getInstance().displaySceneAndWait("Les données ont été sauvegardées avec succès.", "ok" ) == "ok" ) {
             SceneManager.getInstance().changeScene("menu.fxml");
         }
     }
