@@ -77,3 +77,8 @@
 .checkbox:selected {
     -fx-background-color: #B4D4F2;
 }
+.label-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #336699;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
