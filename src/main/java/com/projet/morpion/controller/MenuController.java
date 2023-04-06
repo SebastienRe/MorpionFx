@@ -113,6 +113,10 @@ public class MenuController {
             TrainerController.setDifficulty(difficulty);
             canStart = false;
             Button button = new Button("Train the AI");
+            //reduire taille du texte
+            button.setStyle("-fx-font-size: 20px;");
+            //reduire la taille du boutton
+            button.setMinSize(70, 75);
             button.setOnAction(event -> {
                 SceneManager.getInstance().changeScene("train.fxml");
             });
