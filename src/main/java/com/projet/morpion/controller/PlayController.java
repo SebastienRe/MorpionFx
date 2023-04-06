@@ -70,8 +70,11 @@ public class PlayController {
         });
 
         if (isVSai) {
+
             affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
-            affichageHaut.setText("AI turn");
+            //affichageHaut.setText("AI turn");
+            affichageHaut.setVisible(true);
+            affichageHaut.setText("");
             timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
                     new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
@@ -115,7 +118,10 @@ public class PlayController {
         ImageView imgPlay = createImgPlay();
         positionJoue.setGraphic(imgPlay); // création de l'image et ajout dans le bouton
         if (isPlayerOneTurn) {
-            affichageHaut.setText("Player O turn");
+            if(isVSai)
+                affichageHaut.setText("AI turn");
+            else
+                affichageHaut.setText("Player O turn");
             morpion.afterPlayerOneMove(idCaseJouee);
             isPlayerOneTurn = false; // On change de joueur
         } else {
@@ -176,10 +182,10 @@ public class PlayController {
                     } else {
                         affichageHaut.setText("Player O win");
                     }
-                }else
+                }else if (morpion.getIdWinner() == -1)
                     affichageHaut.setText("Player X win");
+                matriceDuJeu.setVisible(false);
             });
-
 
 
         }
@@ -188,17 +194,13 @@ public class PlayController {
             System.out.println("fini");
             if (isGrilleRemplis && !isWin) {
                 animationMatchNull();
+                affichageHaut.setLayoutX(50);
+                affichageHaut.setLayoutY(50);
+                affichageHaut.setText("end game, no winner");
+            }else
+            {
                 affichageHaut.setText("");
             }
-            else if (morpion.getIdWinner() == -1)
-                affichageHaut.setText("");
-            else if (morpion.getIdWinner() == 1)
-                if (isVSai)
-                    affichageHaut.setText("");
-                else
-                    affichageHaut.setText("");
-            else
-                throw new IllegalStateException("Unexpected value: " + morpion.getIdWinner());
             affichageHaut.setVisible(true);
             replay.setVisible(true);
             enableORdisableAllButton(true);
