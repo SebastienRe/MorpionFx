@@ -194,6 +194,7 @@ public class PlayController {
                 animationMatchNull();
                 affichageHaut.setLayoutX(50);
                 affichageHaut.setLayoutY(50);
+                help.setVisible(false);
                 affichageHaut.setText("end game, no winner");
             }else
             {
