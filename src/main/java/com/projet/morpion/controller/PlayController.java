@@ -195,7 +195,7 @@ public class PlayController {
                 affichageHaut.setLayoutX(50);
                 affichageHaut.setLayoutY(50);
                 help.setVisible(false);
-                affichageHaut.setText("end game, no winner");
+                affichageHaut.setText("End game, no winner");
             }else
             {
                 affichageHaut.setText("");
