@@ -11,6 +11,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="406.0" prefWidth="452.0" spacing="20.0">
          <children>
+            <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#startPlay" styleClass="button2" text="Let's play" />
             <TextField fx:id="field" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="384.0">
                <font>
                   <Font size="18.0" />

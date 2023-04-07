@@ -8,6 +8,7 @@ import com.projet.morpion.ai.transfert.SigmoidalTransferFunction;
 import com.projet.morpion.utilities.SceneManager;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 
@@ -17,6 +18,8 @@ import static com.projet.morpion.ai.Test.*;
 
 public class TrainerController {
 
+    @FXML
+    private Button startButton;
     @FXML
     private TextField field;
     @FXML

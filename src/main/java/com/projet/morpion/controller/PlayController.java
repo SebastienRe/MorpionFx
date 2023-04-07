@@ -24,7 +24,7 @@ import static java.lang.Thread.sleep;
 
 public class PlayController {
     @FXML
-    VBox howStartChoicePannel;
+    VBox whoStartChoicePannel;
     @FXML
     AnchorPane anchor;
     @FXML
@@ -66,7 +66,7 @@ public class PlayController {
             affichageHaut.setText("");
             disableAllOrEnableAllAvailableButtons(true);
             instanceOfAI = MultiLayerPerceptron.load(model);
-            howStartChoicePannel.setVisible(true);
+            whoStartChoicePannel.setVisible(true);
         }
         else {
             affichageHaut.setText("Player X turn");
@@ -75,12 +75,12 @@ public class PlayController {
 
     @FXML
     protected void playerStartTheGame() {
-        howStartChoicePannel.setVisible(false);
+        whoStartChoicePannel.setVisible(false);
         disableAllOrEnableAllAvailableButtons(false);
     }
     @FXML
     protected void AIStartTheGame() {
-        howStartChoicePannel.setVisible(false);
+        whoStartChoicePannel.setVisible(false);
         isPlayerOneTurn = false;
         AIplay();
     }

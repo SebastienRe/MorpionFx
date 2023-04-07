@@ -78,9 +78,9 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
         <Label fx:id="affichageHaut" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="1.0" prefHeight="17.0" prefWidth="347.0" styleClass="label-title" stylesheets="@../../../css/style.css" text="affichageHaut" visible="false" />
-        <VBox fx:id="howStartChoicePannel" alignment="CENTER" layoutX="148.0" layoutY="151.0" prefHeight="98.0" prefWidth="143.0" visible="false">
+        <VBox fx:id="whoStartChoicePannel" alignment="CENTER" layoutX="148.0" layoutY="151.0" prefHeight="98.0" prefWidth="143.0" visible="false">
             <children>
-                <Label text="Hows Starts ?">
+                <Label text=" Who starts ?">
                     <font>
                         <Font size="18.0" />
                     </font>
