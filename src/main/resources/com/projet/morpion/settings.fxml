@@ -27,39 +27,39 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="cell00" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" prefHeight="0.0" prefWidth="61.0" text="1">
+                  <TextField fx:id="cell00" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" prefHeight="0.0" prefWidth="61.0" text="1">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell01" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="2" GridPane.columnIndex="1">
+                  <TextField fx:id="cell01" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="2" GridPane.columnIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell10" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" prefWidth="134.0" text="3" GridPane.columnIndex="2">
+                  <TextField fx:id="cell10" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" prefWidth="134.0" text="3" GridPane.columnIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell11" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="4" GridPane.rowIndex="1">
+                  <TextField fx:id="cell11" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell20" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="cell20" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell21" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="cell21" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell02" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="7" GridPane.rowIndex="2">
+                  <TextField fx:id="cell02" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="7" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell12" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="cell12" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <TextField fx:id="cell22" onKeyPressed="#controleField" onKeyTyped="#controleNumeric" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <TextField fx:id="cell22" onKeyReleased="#controleField" onKeyTyped="#controleNumeric" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font></TextField>

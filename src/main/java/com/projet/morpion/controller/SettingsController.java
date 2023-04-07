@@ -118,7 +118,7 @@ public void initialize() throws IOException {
 
         //disable le bouton save si le texte field est vide
         TextField field = (TextField) e.getSource();
-        if(field.getText().isEmpty())
+        if(field.getText().isEmpty() || field.getText().charAt(field.getText().length() - 1) == '.')
         {
             boutonSave.setDisable(true);
         }
@@ -135,7 +135,6 @@ public void initialize() throws IOException {
         {
             field.setText(field.getText().replaceAll("[^\\d]", ""));
             field.positionCaret(field.getText().length());
-
         }
     }
     @FXML
