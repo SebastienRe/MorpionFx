@@ -35,6 +35,7 @@ public class TrainerController {
 
     @FXML
     protected void startTraining() {
+        field.setEditable(false);
 
         // LOAD DATA ...
         //

@@ -131,7 +131,7 @@ public void initialize() throws IOException {
     protected void controleNumeric(Event e)
     {
         TextField field = (TextField) e.getSource();
-        if(!field.getText().matches("[0-9]*"))
+        if(!field.getText().matches("[0-9.]*"))
         {
             field.setText(field.getText().replaceAll("[^\\d]", ""));
             field.positionCaret(field.getText().length());
