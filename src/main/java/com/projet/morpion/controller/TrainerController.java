@@ -5,6 +5,7 @@ import com.projet.morpion.ai.config.ConfigFileLoader;
 import com.projet.morpion.ai.coup.Coup;
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.ai.transfert.SigmoidalTransferFunction;
+import com.projet.morpion.utilities.FilesManager;
 import com.projet.morpion.utilities.SceneManager;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -38,6 +39,7 @@ public class TrainerController {
 
     @FXML
     protected void startTraining() {
+        startButton.setDisable(true);
         field.setEditable(false);
 
         // LOAD DATA ...
@@ -90,6 +92,7 @@ public class TrainerController {
                     }
                 }
                     updateMessage("Learning completed!");
+                    startButton.setDisable(false);
                     updateProgress(100, 100);
 
                     // save to model
@@ -106,10 +109,20 @@ public class TrainerController {
         progress.progressProperty().bind(task.progressProperty()); // bind progress bar to task progress
         Thread thread = new Thread(task);
         thread.start();
+
     }
     @FXML
     protected void retourMenu()
     {
         SceneManager.changeScene("menu.fxml");
+    }
+
+    @FXML
+    protected void startPlay()
+    {
+        startButton.setDisable(false);
+        PlayController.setModel("./resources/models/"+FilesManager.getModelSrl(difficulty));
+        PlayController.setIsAi(true);
+        SceneManager.changeScene("jeu.fxml");
     }
 }
