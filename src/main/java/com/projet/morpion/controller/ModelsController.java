@@ -2,14 +2,11 @@ package com.projet.morpion.controller;
 
 import com.projet.morpion.utilities.SceneManager;
 import com.projet.morpion.utilities.FilesManager;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
 
 import java.util.List;
 
@@ -27,6 +24,7 @@ public class ModelsController {
             Label label = new Label("  " + file);
             label.setStyle("-fx-font-size: 20px;");
             CheckBox checkBox = new CheckBox();
+            checkBox.setCursor(javafx.scene.Cursor.HAND);
             checkBox.setOnAction(event -> {
                 if (checkBox.isSelected()) {
                     deleteButton.setDisable(false);
@@ -48,7 +46,7 @@ public class ModelsController {
 
     @FXML
     protected void deleteButtonPressed () {
-        if (SceneManager.getInstance().displaySceneAndWait("Do you really want to delete these files?", "choix") == "oui" ){
+        if (SceneManager.displayPopUpAndWait("Do you really want to delete these files?", "choix") == "oui" ){
             deleteSelectedModels();
             deleteButton.setDisable(true);
         }
@@ -78,6 +76,6 @@ public class ModelsController {
 
     @FXML
     protected void retourMenu() {
-        SceneManager.getInstance().changeScene("menu.fxml");
+        SceneManager.changeScene("menu.fxml");
     }
 }

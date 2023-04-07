@@ -5,26 +5,16 @@ import com.projet.morpion.controller.PopupController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class SceneManager {
-    public static Popup popup;
-    private static SceneManager instance = null;
-    private SceneManager() {
-    }
 
-    public static SceneManager getInstance() {
-        if (instance == null) {
-            instance = new SceneManager();
-        }
-        return instance;
-    }
 
-    public void changeScene(String sceneName) {
+    public static void changeScene(String sceneName) {
         try {
             Launcher.getMainStage().setResizable(false);
             FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource(sceneName));
@@ -36,12 +26,13 @@ public class SceneManager {
         }
     }
 
-    public String displaySceneAndWait(String text, String mode) {
+    public static String displayPopUpAndWait(String text, String mode) {
         try {
             // Créer une nouvelle fenêtre
             Stage popupStage = new Stage();
-            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initModality(Modality.APPLICATION_MODAL); // Bloquer l'accès à la fenêtre principale
             popupStage.setResizable(false);
+            popupStage.getIcons().add(new Image("file:./resources/images/TicTacToe/logo.png"));
 
             // Charger le fichier FXML
             FXMLLoader loader = new FXMLLoader(Launcher.class.getResource("popup.fxml"));

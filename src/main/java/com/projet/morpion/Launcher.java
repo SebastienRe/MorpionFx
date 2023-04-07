@@ -13,7 +13,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainStage = stage;
-        SceneManager.getInstance().changeScene("menu.fxml");
+        SceneManager.changeScene("menu.fxml");
         stage.setTitle("Tic-Tac-Toe");
         stage.getIcons().add(new Image("file:./resources/images/TicTacToe/logo.png"));
         stage.show();

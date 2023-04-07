@@ -24,46 +24,33 @@ import static java.lang.Thread.sleep;
 
 public class PlayController {
     @FXML
+    VBox howStartChoicePannel;
+    @FXML
     AnchorPane anchor;
     @FXML
     private Label affichageHaut;
     @FXML
     private Button help;
-    private ImageView img1, img2, img3;
-    private ImageView imageWin;
     @FXML
     private GridPane matriceDuJeu;
-    private ArrayList<Node> listButton = new ArrayList<>();
-    private boolean isPlayerOneTurn = true;
     @FXML
     private Button replay;
-    private static boolean isVSai = false;
 
-    //AI
+
+    private static boolean isVSai = false;
     private static String model = "";
     private Morpion morpion = new Morpion();
     private MultiLayerPerceptron instanceOfAI = null;
-    Timeline timeline;
-    @FXML
-    VBox howStartChoicePannel;
-    @FXML
-    protected void playerStartTheGame() {
-        howStartChoicePannel.setVisible(false);
-        disableAllOrEnableAllAvailableButtons(false);
-    }
-    @FXML
-    protected void AIStartTheGame() {
-        howStartChoicePannel.setVisible(false);
-        isPlayerOneTurn = false;
-        AIplay();
-    }
+    private ImageView img1, img2, img3;
+    private Timeline timeline;
+    private ArrayList<Node> listButton = new ArrayList<>();
+    private boolean isPlayerOneTurn = true;
 
     @FXML
     protected void initialize() {
         replay.setOnAction(actionEvent -> { // Bouton replay
-            SceneManager.getInstance().changeScene("jeu.fxml");
+            SceneManager.changeScene("jeu.fxml");
         });
-
         affichageHaut.setVisible(true);
         affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
         timeline = new Timeline(
@@ -84,12 +71,24 @@ public class PlayController {
         else {
             affichageHaut.setText("Player X turn");
         }
-
     }
 
     @FXML
+    protected void playerStartTheGame() {
+        howStartChoicePannel.setVisible(false);
+        disableAllOrEnableAllAvailableButtons(false);
+    }
+    @FXML
+    protected void AIStartTheGame() {
+        howStartChoicePannel.setVisible(false);
+        isPlayerOneTurn = false;
+        AIplay();
+    }
+
+
+    @FXML
     protected void help() {
-        SceneManager.getInstance().displaySceneAndWait("Tic-tac-toe is a two-player game. The object of the game is to line up three identical symbols; the player who manages to line up three symbols wins the game.", "ok");
+        SceneManager.displayPopUpAndWait("Tic-tac-toe is a two-player game. The object of the game is to line up three identical symbols; the player who manages to line up three symbols wins the game.", "ok");
     }
 
     public static void setIsAi(boolean isVSai) {
@@ -156,34 +155,23 @@ public class PlayController {
             matriceDuJeu.add(stackPane, 0, 0);
             //afficher une image à la fin des transitions
             transition3.setOnFinished(e->{
+                affichageHaut.setVisible(true);
                 affichageHaut.setLayoutY(50);
                 affichageHaut.setLayoutY(70);
-                if(morpion.getIdWinner() == 1) {
-                    if (isVSai) {
-                        affichageHaut.setText("Winner");
-                    } else {
-                        affichageHaut.setText("Winner");
-                    }
-                }else if (morpion.getIdWinner() == -1)
-                    affichageHaut.setText("Winner");
+                affichageHaut.setText("Winner");
             });
-
-
         }
-
-        if ( isGrilleRemplis || isWin) { // si partie fini
+        if ( isGrilleRemplis || isWin) {// si partie fini
             System.out.println("fini");
+            affichageHaut.setVisible(false);
             if (isGrilleRemplis && !isWin) {
+                affichageHaut.setVisible(true);
                 animationMatchNull();
                 affichageHaut.setLayoutX(50);
                 affichageHaut.setLayoutY(50);
                 help.setVisible(false);
                 affichageHaut.setText("End game, no winner");
-            }else
-            {
-                affichageHaut.setText("");
             }
-            affichageHaut.setVisible(true);
             replay.setVisible(true);
             disableAllOrEnableAllAvailableButtons(true);
         }
@@ -259,7 +247,7 @@ public class PlayController {
     @FXML
     protected void onClickBack()
     {
-        SceneManager.getInstance().changeScene("menu.fxml");
+        SceneManager.changeScene("menu.fxml");
     }
     private void createImgWin() {
         int result = morpion.getIdWinner();
@@ -267,13 +255,10 @@ public class PlayController {
             img1 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img2 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
             img3 = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
-            imageWin = new ImageView("file:./resources/images/TicTacToe/winCross2.png");
         } else if (result == 1) {
             img1 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img2 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
             img3 = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
-            imageWin = new ImageView("file:./resources/images/TicTacToe/win_circle2.png");
-
         }
         img1.setFitWidth(30);
         img1.setFitHeight(30);
@@ -306,7 +291,6 @@ public class PlayController {
 
     private void hideOthersButtons(int [] position) {
         // Cacher les autres boutons
-        //for matriceDuJeu.getChildren()
         for (Node node : matriceDuJeu.getChildren()) {
             if (node instanceof Button) {
                 Button button = (Button) node;

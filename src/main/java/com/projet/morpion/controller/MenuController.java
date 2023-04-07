@@ -22,10 +22,7 @@ public class MenuController {
     @FXML
     VBox vboxAffichage;
     @FXML
-    Menu menuCredit;
-    @FXML
     Label titre;
-    String model = "";
 
     boolean canStart = false;
 
@@ -36,29 +33,29 @@ public class MenuController {
                 new KeyFrame(Duration.seconds(1), new KeyValue(titre.scaleXProperty(), 1.2)),
                 new KeyFrame(Duration.seconds(2), new KeyValue(titre.scaleXProperty(), 1.0))
         );
-        timeline.setAutoReverse(true);
+        timeline.setAutoReverse(true); //reverse the animation
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
 
     @FXML
     protected void credit(){
-        SceneManager.getInstance().displaySceneAndWait("Graphic interface project realized by :\nSébastien Ré\nLyes Douki", "ok");
+        SceneManager.displayPopUpAndWait("Graphic interface project realized by :\nSébastien Ré\nLyes Douki", "ok");
     }
 
     @FXML
     protected void onClickSettings() {
-        SceneManager.getInstance().changeScene("settings.fxml");
+        SceneManager.changeScene("settings.fxml");
     }
     @FXML
     protected void modelButtonPressed() {
-        SceneManager.getInstance().changeScene("models.fxml");
+        SceneManager.changeScene("models.fxml");
     }
 
     @FXML
     protected void humanVShuman() {
         PlayController.setIsAi(false);
-        SceneManager.getInstance().changeScene("jeu.fxml");
+        SceneManager.changeScene("jeu.fxml");
     }
 
     @FXML
@@ -66,7 +63,7 @@ public class MenuController {
         if (easy.isSelected() || medium.isSelected() || hard.isSelected()) {
             if (canStart){
                 PlayController.setIsAi(true);
-                SceneManager.getInstance().changeScene("jeu.fxml");
+                SceneManager.changeScene("jeu.fxml");
             }
             else {
                 vboxAffichage.getChildren().clear();
@@ -130,9 +127,10 @@ public class MenuController {
             TrainerController.setDifficulty(difficulty);
             canStart = false;
             Button button = new Button("Train the AI");
+            button.setCursor(javafx.scene.Cursor.HAND);
             button.getStyleClass().add("button2");
             button.setOnAction(event -> {
-                SceneManager.getInstance().changeScene("train.fxml");
+                SceneManager.changeScene("train.fxml");
             });
             vboxAffichage.getChildren().add(button);
         }

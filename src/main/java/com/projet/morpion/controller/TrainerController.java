@@ -100,13 +100,13 @@ public class TrainerController {
         task.messageProperty().addListener((observableValue, s, t1) -> {
             field.setText(t1);
         });
-        progress.progressProperty().bind(task.progressProperty());
+        progress.progressProperty().bind(task.progressProperty()); // bind progress bar to task progress
         Thread thread = new Thread(task);
         thread.start();
     }
     @FXML
     protected void retourMenu()
     {
-        SceneManager.getInstance().changeScene("menu.fxml");
+        SceneManager.changeScene("menu.fxml");
     }
 }
