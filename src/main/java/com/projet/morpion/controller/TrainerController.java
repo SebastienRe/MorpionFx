@@ -29,7 +29,12 @@ public class TrainerController {
     }
 
     @FXML
-    protected void onClick() {
+    public void initialize() {
+        startTraining();
+    }
+
+    @FXML
+    protected void startTraining() {
 
         // LOAD DATA ...
         //
