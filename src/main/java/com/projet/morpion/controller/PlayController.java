@@ -1,6 +1,5 @@
 package com.projet.morpion.controller;
 
-import com.projet.morpion.Launcher;
 import com.projet.morpion.ai.layer.MultiLayerPerceptron;
 import com.projet.morpion.models.Morpion;
 import com.projet.morpion.utilities.SceneManager;
@@ -8,16 +7,11 @@ import javafx.animation.*;
 import javafx.concurrent.Task;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
@@ -55,7 +49,7 @@ public class PlayController {
     @FXML
     protected void playerStartTheGame() {
         howStartChoicePannel.setVisible(false);
-        enableORdisableAllButton(false);
+        disableAllOrEnableAllAvailableButtons(false);
     }
     @FXML
     protected void AIStartTheGame() {
@@ -70,36 +64,25 @@ public class PlayController {
             SceneManager.getInstance().changeScene("jeu.fxml");
         });
 
-        if (isVSai) {
+        affichageHaut.setVisible(true);
+        affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
+        timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
+                new KeyFrame(Duration.seconds(2), new KeyValue(affichageHaut.scaleXProperty(), 1.0))
+        );
+        timeline.setAutoReverse(true);
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
 
-            affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
-            //affichageHaut.setText("AI turn");
-            affichageHaut.setVisible(true);
+        if (isVSai) {
             affichageHaut.setText("");
-            timeline = new Timeline(
-                    new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
-                    new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
-                    new KeyFrame(Duration.seconds(2), new KeyValue(affichageHaut.scaleXProperty(), 1.0))
-            );
-            timeline.setAutoReverse(true);
-            timeline.setCycleCount(Timeline.INDEFINITE);
-            timeline.play();
-            enableORdisableAllButton(true);
+            disableAllOrEnableAllAvailableButtons(true);
             instanceOfAI = MultiLayerPerceptron.load(model);
             howStartChoicePannel.setVisible(true);
         }
         else {
-            affichageHaut.setVisible(true);
-            affichageHaut.setFont(Font.font("Helvetica", FontWeight.BOLD, 24));
             affichageHaut.setText("Player X turn");
-            timeline = new Timeline(
-                    new KeyFrame(Duration.ZERO, new KeyValue(affichageHaut.scaleXProperty(), 1.0)),
-                    new KeyFrame(Duration.seconds(1), new KeyValue(affichageHaut.scaleXProperty(), 1.2)),
-                    new KeyFrame(Duration.seconds(2), new KeyValue(affichageHaut.scaleXProperty(), 1.0))
-            );
-            timeline.setAutoReverse(true);
-            timeline.setCycleCount(Timeline.INDEFINITE);
-            timeline.play();
         }
 
     }
@@ -144,7 +127,7 @@ public class PlayController {
 
         if (isWin) { // Si il y a un gagnant colore les cases gagnantes
             help.setVisible(false);
-            enableORdisableAllButton(false);
+            disableAllOrEnableAllAvailableButtons(false);
             int[] positionGagnante = morpion.getPositionWinner();
 
             createImgWin();
@@ -157,7 +140,7 @@ public class PlayController {
             Button btn3 = (Button) matriceDuJeu.getChildren().get(positionGagnante[2]);
             btn3.setGraphic(img3);
             // Ajouter les boutons à un conteneur StackPane
-            cacherAutreBouton(positionGagnante);
+            hideOthersButtons(positionGagnante);
             StackPane stackPane = new StackPane(btn1, btn2, btn3);
             // Définir la position finale de la transition (le point de fusion)
             double xDestination = matriceDuJeu.getWidth() /2 - 50;
@@ -202,7 +185,7 @@ public class PlayController {
             }
             affichageHaut.setVisible(true);
             replay.setVisible(true);
-            enableORdisableAllButton(true);
+            disableAllOrEnableAllAvailableButtons(true);
         }
     }
 
@@ -221,7 +204,7 @@ public class PlayController {
             AIplay();
     }
     private void AIplay() {
-        enableORdisableAllButton(true);
+        disableAllOrEnableAllAvailableButtons(true);
         Task task = new Task() {
             @Override
             protected Object call() throws Exception{
@@ -241,28 +224,25 @@ public class PlayController {
             System.out.println("Dev predicted: "+ Arrays.toString(res));
 
             while (true) {
-
                 int i = 0;
                 for (int j = 0; j < res.length; j++) {
                     System.out.println("res[" + j + "] = " + res[j]);
                     if (res[j] > res[i])
                         i = j;
                 }
-
                 System.out.println("AI play " + i);
                 if (morpion.getMatriceDuJeu()[i] == 0){
                     play(i);
                     break;
                 }
                 res[i] = -1;
-
             }
-            enableORdisableAllButton(false);
+            disableAllOrEnableAllAvailableButtons(false);
         });
 
     }
 
-    private void enableORdisableAllButton(boolean isDisable) {
+    private void disableAllOrEnableAllAvailableButtons(boolean isDisable) {
         if (isDisable)
             for (Node node : matriceDuJeu.getChildren()) {
                 if (!node.isDisable())
@@ -323,7 +303,8 @@ public class PlayController {
 
         return transition;
     }
-    private void cacherAutreBouton(int [] position) {
+
+    private void hideOthersButtons(int [] position) {
         // Cacher les autres boutons
         //for matriceDuJeu.getChildren()
         for (Node node : matriceDuJeu.getChildren()) {
