@@ -2,10 +2,12 @@ package com.projet.morpion.controller;
 
 import com.projet.morpion.utilities.SceneManager;
 import com.projet.morpion.utilities.FilesManager;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 
@@ -72,6 +74,7 @@ public class ModelsController {
             }
         }
     }
+
 
     @FXML
     protected void retourMenu() {

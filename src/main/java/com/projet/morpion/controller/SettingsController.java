@@ -1,10 +1,18 @@
 package com.projet.morpion.controller;
 
 import com.projet.morpion.utilities.SceneManager;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.robot.Robot;
+import javafx.util.Duration;
 
 
 import java.io.*;
@@ -12,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SettingsController {
+    @FXML
+    private Button boutonSave;
     private int i = 0;
     private List<String []> listOfNewValues;
 
@@ -30,6 +40,8 @@ public void initialize() throws IOException {
         remplirField(configLu, i);
         i = i + 3;
     }
+       fr.close();
+
 }
     @FXML
     private GridPane gridPane;
@@ -70,6 +82,7 @@ public void initialize() throws IOException {
 
         while (gridLimit<9)
         {
+
             String [] tab = new String[3];
             node = gridPane.getChildren().get(gridLimit);
             tab[0] = ((TextField) node).getText();
@@ -77,6 +90,7 @@ public void initialize() throws IOException {
             tab[1] = ((TextField) node).getText();
             node = gridPane.getChildren().get(++gridLimit);
             tab[2] = ((TextField) node).getText();
+
             gridLimit++;
             tmpList.add(tab);
         }
@@ -97,6 +111,32 @@ public void initialize() throws IOException {
           columnIndex++;
       }
 
+    }
+    @FXML
+    protected void controleField(Event e)
+    {
+
+        //disable le bouton save si le texte field est vide
+        TextField field = (TextField) e.getSource();
+        if(field.getText().isEmpty())
+        {
+            boutonSave.setDisable(true);
+        }
+        else
+        {
+            boutonSave.setDisable(false);
+        }
+    }
+    @FXML
+    protected void controleNumeric(Event e)
+    {
+        TextField field = (TextField) e.getSource();
+        if(!field.getText().matches("[0-9]*"))
+        {
+            field.setText(field.getText().replaceAll("[^\\d]", ""));
+            field.positionCaret(field.getText().length());
+
+        }
     }
     @FXML
     protected void retourMenu()
