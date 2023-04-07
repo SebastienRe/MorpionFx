@@ -15,7 +15,7 @@
    <children>
       <MenuBar prefHeight="25.0" prefWidth="70.0">
          <menus>
-            <Menu mnemonicParsing="false" text="IA">
+            <Menu mnemonicParsing="false" text="AI">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#onClickSettings" text="Settings" />
                   <MenuItem mnemonicParsing="false" onAction="#modelButtonPressed" text="Model" />
