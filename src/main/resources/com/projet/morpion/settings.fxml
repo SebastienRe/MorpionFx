@@ -75,7 +75,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="7.0" layoutY="289.0" text="Difficult">
+            <Label layoutX="17.0" layoutY="289.0" text="Hard">
                <font>
                   <Font size="18.0" />
                </font>
