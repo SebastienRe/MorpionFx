@@ -226,7 +226,7 @@ public class PlayController {
             @Override
             protected Object call() throws Exception{
                 try {//ne fait rien de 1 à 2 secondes pour simuler le temps de réflexion de l'IA
-                    sleep((long) (Math.random() * 1000 + 1000));
+                    sleep((long) (Math.random() * 500 + 500));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -240,7 +240,6 @@ public class PlayController {
             System.out.println("table de jeu: "+ Arrays.toString(morpion.getMatriceDuJeu()) + "");
             System.out.println("Dev predicted: "+ Arrays.toString(res));
 
-
             while (true) {
 
                 int i = 0;
@@ -249,7 +248,6 @@ public class PlayController {
                     if (res[j] > res[i])
                         i = j;
                 }
-
 
                 System.out.println("AI play " + i);
                 if (morpion.getMatriceDuJeu()[i] == 0){
