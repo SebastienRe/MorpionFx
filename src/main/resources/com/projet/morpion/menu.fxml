@@ -42,7 +42,7 @@
             <CheckBox fx:id="easy" layoutX="79.0" layoutY="259.0" mnemonicParsing="false" onAction="#easyCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Easy" />
             <CheckBox fx:id="medium" layoutX="161.0" layoutY="259.0" mnemonicParsing="false" onAction="#mediumCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Medium" />
             <CheckBox fx:id="hard" layoutX="280.0" layoutY="259.0" mnemonicParsing="false" onAction="#hardCheck" styleClass="checkbox" stylesheets="@../../../css/style.css" text="Hard" />
-            <VBox fx:id="vbox_affichage" alignment="CENTER" layoutX="116.0" layoutY="315.0" prefHeight="46.0" prefWidth="219.0" stylesheets="@../../../css/style.css" />
+            <VBox fx:id="vboxAffichage" alignment="CENTER" layoutX="116.0" layoutY="315.0" prefHeight="46.0" prefWidth="219.0" stylesheets="@../../../css/style.css" />
             <Label fx:id="titre" alignment="CENTER" layoutX="79.0" layoutY="5.0" prefHeight="17.0" prefWidth="285.0" styleClass="label-title" stylesheets="@../../../css/style.css" text="Tic Tac Toe">
                <font>
                   <Font name="System Bold" size="48.0" />

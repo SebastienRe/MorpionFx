@@ -48,7 +48,7 @@ public class ModelsController {
 
     @FXML
     protected void deleteButtonPressed () {
-        if (SceneManager.getInstance().displaySceneAndWait("Voulez vous vraiment\nsupprimer ces fichiers ?", "choix") == "oui" ){
+        if (SceneManager.getInstance().displaySceneAndWait("Do you really want to delete these files?", "choix") == "oui" ){
             deleteSelectedModels();
             deleteButton.setDisable(true);
         }

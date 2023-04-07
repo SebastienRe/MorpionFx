@@ -71,7 +71,7 @@ public void initialize() throws IOException {
         writer.write(sb.toString());
         writer.close();
 
-        if ( SceneManager.getInstance().displaySceneAndWait("Les données ont été sauvegardées avec succès.", "ok" ) == "ok" ) {
+        if ( SceneManager.getInstance().displaySceneAndWait("The data was successfully backed up.", "ok" ) == "ok" ) {
             SceneManager.getInstance().changeScene("menu.fxml");
         }
     }

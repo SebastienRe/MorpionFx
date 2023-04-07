@@ -106,7 +106,7 @@ public class PlayController {
 
     @FXML
     protected void help() {
-        SceneManager.getInstance().displaySceneAndWait("Le jeu de morpion est un jeu à deux joueurs.\nl'objectif est d'aligner trois symboles identiques, le joueur qui réussit à aligner\ntrois symboles gagne la partie.", "ok");
+        SceneManager.getInstance().displaySceneAndWait("Tic-tac-toe is a two-player game. The object of the game is to line up three identical symbols; the player who manages to line up three symbols wins the game.", "ok");
     }
 
     public static void setIsAi(boolean isVSai) {
